@@ -17,11 +17,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Mobile responsive utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure text doesn't overflow on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  /* Better touch targets for mobile */
+  button, a, input, textarea, select {
+    min-height: 44px;
+  }
+  
+  /* Prevent zoom on input focus on iOS */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
 }
 
 .hero-gradient {
@@ -45,7 +75,7 @@ code {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #eab308 100%); /* Purple to Yellow */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -73,10 +103,20 @@ code {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #667eea;
+  background: #a855f7; /* Purple */
   border-radius: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #764ba2;
+  background: #eab308; /* Yellow */
+}
+
+/* Image Slider Progress Bar Animation */
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }

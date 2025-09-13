@@ -30,8 +30,8 @@ import {
 } from 'react-icons/fa';
 
 const Services = () => {
-  const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
-  const [servicesRef, servicesInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [servicesRef, servicesInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [expandedService, setExpandedService] = useState(null);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [selectedService, setSelectedService] = useState('');
@@ -333,21 +333,21 @@ const Services = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-8"
+            className="text-center space-y-4 md:space-y-8"
           >
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               Our <span className="text-blue-200">Services</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
               Comprehensive analytical testing services with state-of-the-art equipment and expert professionals
             </p>
-            <div className="flex justify-center items-center space-x-8 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-6 md:mb-8">
               <div className="flex items-center space-x-2">
                 <FaCheckCircle className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">NABL Accredited</span>
@@ -363,7 +363,7 @@ const Services = () => {
             </div>
             
             {/* AI Advisor CTA */}
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
               <button
                 onClick={() => {
                   // Set sample product info for demo
@@ -378,16 +378,17 @@ const Services = () => {
                   });
                   setShowAIAdvisor(true);
                 }}
-                className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-green-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center space-x-3"
+                className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-teal-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:from-green-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center space-x-2 md:space-x-3"
               >
-                <FaDesktop className="w-5 h-5" />
+                <FaDesktop className="w-4 h-4 md:w-5 md:h-5" />
                 <span>Get AI Testing Recommendations</span>
               </button>
               <button
                 onClick={() => setShowQuoteModal(true)}
-                className="bg-white bg-opacity-20 text-white border-2 border-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
+                className="w-full sm:w-auto bg-white bg-opacity-20 text-white border-2 border-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
               >
-                Request Quote
+                <FaPaperPlane className="w-4 h-4 md:w-5 md:h-5" />
+                <span>Request Quote</span>
               </button>
             </div>
           </motion.div>
@@ -395,61 +396,61 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section ref={servicesRef} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={servicesRef} className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={servicesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
               Comprehensive <span className="text-gradient">Testing Solutions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
               Professional analytical services across multiple domains with quick turnaround times and accurate results
             </p>
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 50 }}
                 animate={servicesInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
               >
                 {/* Service Header */}
                 <div 
-                  className={`bg-gradient-to-r ${service.gradient} p-6 cursor-pointer`}
+                  className={`bg-gradient-to-r ${service.gradient} p-4 md:p-6 cursor-pointer`}
                   onClick={() => toggleService(service.id)}
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 bg-white bg-opacity-20 rounded-full">
-                        <service.icon className="h-8 w-8 text-white" />
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-4 sm:space-y-0">
+                    <div className="flex items-center space-x-3 md:space-x-4">
+                      <div className="p-2 md:p-3 bg-white bg-opacity-20 rounded-full">
+                        <service.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
                       </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">{service.title}</h3>
-                        <p className="text-white text-opacity-90">{service.subtitle}</p>
+                      <div className="flex-1">
+                        <h3 className="text-lg md:text-2xl font-bold text-white">{service.title}</h3>
+                        <p className="text-sm md:text-base text-white text-opacity-90">{service.subtitle}</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-4">
-                      <div className="text-right text-white text-sm">
+                    <div className="flex items-center justify-between sm:justify-end space-x-4">
+                      <div className="text-right text-white text-xs md:text-sm">
                         <div className="font-medium">Turnaround</div>
                         <div className="text-white text-opacity-90">{service.turnaround}</div>
                       </div>
                       <div className="p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors duration-200">
                         {expandedService === service.id ? (
-                          <FaMinus className="h-5 w-5 text-white" />
+                          <FaMinus className="h-4 w-4 md:h-5 md:w-5 text-white" />
                         ) : (
-                          <FaPlus className="h-5 w-5 text-white" />
+                          <FaPlus className="h-4 w-4 md:h-5 md:w-5 text-white" />
                         )}
                       </div>
                     </div>
                   </div>
-                  <p className="text-white text-opacity-90 mt-3 leading-relaxed">
+                  <p className="text-sm md:text-base text-white text-opacity-90 mt-3 leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -462,20 +463,20 @@ const Services = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="p-6 border-t border-gray-100"
+                      className="p-4 md:p-6 border-t border-gray-100"
                     >
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {/* Tests Performed */}
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <FaVial className="h-5 w-5 text-blue-600 mr-2" />
+                          <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4 flex items-center">
+                            <FaVial className="h-4 w-4 md:h-5 md:w-5 text-blue-600 mr-2" />
                             Tests Performed
                           </h4>
                           <ul className="space-y-2">
                             {service.tests.map((test, testIndex) => (
                               <li key={testIndex} className="flex items-start space-x-2">
-                                <FaCheckCircle className="h-4 w-4 text-green-500 mt-1 flex-shrink-0" />
-                                <span className="text-gray-600 text-sm">{test}</span>
+                                <FaCheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 mt-1 flex-shrink-0" />
+                                <span className="text-gray-600 text-xs md:text-sm">{test}</span>
                               </li>
                             ))}
                           </ul>
@@ -483,15 +484,15 @@ const Services = () => {
 
                         {/* Applications */}
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <FaCertificate className="h-5 w-5 text-green-600 mr-2" />
+                          <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4 flex items-center">
+                            <FaCertificate className="h-4 w-4 md:h-5 md:w-5 text-green-600 mr-2" />
                             Applications
                           </h4>
                           <ul className="space-y-2">
                             {service.applications.map((application, appIndex) => (
                               <li key={appIndex} className="flex items-start space-x-2">
-                                <FaArrowRight className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
-                                <span className="text-gray-600 text-sm">{application}</span>
+                                <FaArrowRight className="h-3 w-3 md:h-4 md:w-4 text-blue-500 mt-1 flex-shrink-0" />
+                                <span className="text-gray-600 text-xs md:text-sm">{application}</span>
                               </li>
                             ))}
                           </ul>
@@ -499,13 +500,13 @@ const Services = () => {
 
                         {/* Service Details */}
                         <div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                            <FaSearch className="h-5 w-5 text-purple-600 mr-2" />
+                          <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4 flex items-center">
+                            <FaSearch className="h-4 w-4 md:h-5 md:w-5 text-purple-600 mr-2" />
                             Service Details
                           </h4>
                           <div className="space-y-3">
-                            <div className="p-3 bg-gray-50 rounded-lg">
-                              <div className="text-sm font-medium text-gray-900">Accreditation</div>
+                            <div className="p-2 md:p-3 bg-gray-50 rounded-lg">
+                              <div className="text-xs md:text-sm font-medium text-gray-900">Accreditation</div>
                               <div className="text-sm text-gray-600">{service.accreditation}</div>
                             </div>
                             <div className="p-3 bg-gray-50 rounded-lg">
@@ -542,7 +543,7 @@ const Services = () => {
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -586,7 +587,7 @@ const Services = () => {
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 className="text-center p-6 rounded-2xl hover:shadow-lg transition-shadow duration-300"
               >

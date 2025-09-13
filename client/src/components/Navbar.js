@@ -44,22 +44,22 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white shadow-lg' 
+        ? 'bg-purple-900 shadow-lg' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <FaFlask className={`h-8 w-8 ${scrolled ? 'text-green-600' : 'text-white'}`} />
+            <FaFlask className={`h-8 w-8 ${scrolled ? 'text-yellow-400' : 'text-white'}`} />
             <div className="flex flex-col">
               <span className={`font-bold text-lg leading-none ${
-                scrolled ? 'text-gray-900' : 'text-white'
+                scrolled ? 'text-white' : 'text-white'
               }`}>
                 GTFTL
               </span>
               <span className={`text-xs leading-none ${
-                scrolled ? 'text-green-600' : 'text-green-200'
+                scrolled ? 'text-yellow-300' : 'text-yellow-200'
               }`}>
                 Food Testing Lab
               </span>
@@ -78,10 +78,10 @@ const Navbar = () => {
                     className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center space-x-1 ${
                       isActive(item.path)
                         ? scrolled
-                          ? 'bg-green-100 text-green-700'
+                          ? 'bg-yellow-100 text-purple-700'
                           : 'bg-white bg-opacity-20 text-white'
                         : scrolled
-                        ? 'text-gray-600 hover:text-green-600 hover:bg-green-50'
+                        ? 'text-gray-300 hover:text-yellow-400 hover:bg-yellow-50'
                         : 'text-gray-200 hover:text-white hover:bg-white hover:bg-opacity-10'
                     }`}
                   >
@@ -97,7 +97,7 @@ const Navbar = () => {
               to="/internship"
               className={`ml-4 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center space-x-2 ${
                 scrolled
-                  ? 'bg-green-600 text-white hover:bg-green-700'
+                  ? 'bg-yellow-500 text-purple-900 hover:bg-yellow-400'
                   : 'bg-white bg-opacity-20 text-white hover:bg-white hover:bg-opacity-30'
               }`}
             >
@@ -112,8 +112,8 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 ${
                 scrolled
-                  ? 'text-gray-600 hover:text-green-600 hover:bg-green-50'
-                  : 'text-white hover:text-green-200 hover:bg-white hover:bg-opacity-10'
+                  ? 'text-gray-300 hover:text-yellow-400 hover:bg-yellow-50'
+                  : 'text-white hover:text-yellow-200 hover:bg-white hover:bg-opacity-10'
               }`}
             >
               {isOpen ? (
@@ -134,7 +134,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white shadow-lg"
+            className="md:hidden bg-purple-900 shadow-lg"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => {
@@ -146,8 +146,8 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 flex items-center space-x-2 ${
                       isActive(item.path)
-                        ? 'bg-green-100 text-green-700'
-                        : 'text-gray-600 hover:text-green-600 hover:bg-green-50'
+                        ? 'bg-yellow-100 text-purple-700'
+                        : 'text-gray-300 hover:text-yellow-400 hover:bg-yellow-50'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -160,7 +160,7 @@ const Navbar = () => {
               <Link
                 to="/internship"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 block px-3 py-2 rounded-lg text-base font-semibold bg-green-600 text-white hover:bg-green-700 transition-colors duration-200 flex items-center space-x-2"
+                className="mt-2 block px-3 py-2 rounded-lg text-base font-semibold bg-yellow-500 text-purple-900 hover:bg-yellow-400 transition-colors duration-200 flex items-center space-x-2"
               >
                 <FaGraduationCap className="h-5 w-5" />
                 <span>Apply Internship</span>

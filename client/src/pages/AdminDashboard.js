@@ -266,6 +266,44 @@ const AdminDashboard = () => {
     }
   };
 
+  const deleteContact = async (contactId) => {
+    if (!window.confirm('Are you sure you want to delete this contact?')) {
+      return;
+    }
+    
+    try {
+      console.log('Deleting contact with ID:', contactId);
+      const response = await api.delete(`/api/admin/contacts/${contactId}`);
+      console.log('Delete response:', response.data);
+      toast.success('Contact deleted successfully');
+      fetchData();
+    } catch (error) {
+      console.error('Delete error details:', error);
+      console.error('Error response:', error.response?.data);
+      console.error('Error status:', error.response?.status);
+      
+      if (error.response?.status === 401) {
+        toast.error('Unauthorized - Please login again');
+      } else if (error.response?.status === 404) {
+        toast.error('Contact not found');
+      } else {
+        toast.error(`Failed to delete contact: ${error.response?.data?.message || error.message}`);
+      }
+    }
+  };
+
+  const viewContactDetails = (contact) => {
+    const details = `
+Name: ${contact.name}
+Email: ${contact.email}
+Subject: ${contact.subject || 'General Inquiry'}
+Message: ${contact.message || 'No message'}
+Status: ${contact.status}
+Date: ${new Date(contact.createdAt).toLocaleString()}
+    `;
+    alert(details);
+  };
+
   const exportData = (data, filename) => {
     const csv = convertToCSV(data);
     const blob = new Blob([csv], { type: 'text/csv' });
@@ -540,10 +578,18 @@ const AdminDashboard = () => {
                   </select>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                  <button className="text-blue-600 hover:text-blue-900">
+                  <button 
+                    className="text-blue-600 hover:text-blue-900"
+                    onClick={() => viewContactDetails(contact)}
+                    title="View Details"
+                  >
                     <FaEye className="h-4 w-4" />
                   </button>
-                  <button className="text-red-600 hover:text-red-900">
+                  <button 
+                    className="text-red-600 hover:text-red-900"
+                    onClick={() => deleteContact(contact._id)}
+                    title="Delete Contact"
+                  >
                     <FaTrash className="h-4 w-4" />
                   </button>
                 </td>

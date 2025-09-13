@@ -73,4 +73,31 @@ router.patch('/admin/:id', authenticateAdmin, async (req, res) => {
   }
 });
 
+// @desc    Delete contact
+// @route   DELETE /api/admin/contacts/:id
+// @access  Private (Admin)
+router.delete('/admin/:id', authenticateAdmin, async (req, res) => {
+  try {
+    const contact = await Contact.findByIdAndDelete(req.params.id);
+    
+    if (!contact) {
+      return res.status(404).json({
+        success: false,
+        message: 'Contact not found'
+      });
+    }
+    
+    res.json({
+      success: true,
+      message: 'Contact deleted successfully',
+      data: contact
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+});
+
 module.exports = router;

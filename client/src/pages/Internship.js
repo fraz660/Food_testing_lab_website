@@ -200,21 +200,21 @@ const Internship = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-8"
+            className="text-center space-y-4 md:space-y-8"
           >
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               Internship <span className="text-blue-200">Programs</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
               Gain hands-on experience in analytical testing with state-of-the-art instruments and expert guidance
             </p>
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex items-center space-x-2">
                 <FaGraduationCap className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Skill Development</span>
@@ -234,7 +234,7 @@ const Internship = () => {
 
       {/* Program Overview */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -294,7 +294,7 @@ const Internship = () => {
 
       {/* Training Areas */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ const Internship = () => {
 
       {/* Program Pricing */}
       <section ref={programsRef} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={programsInView ? { opacity: 1, y: 0 } : {}}
@@ -412,7 +412,7 @@ const Internship = () => {
 
       {/* Eligibility */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -685,7 +685,7 @@ const Internship = () => {
 
       {/* Payment Information */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

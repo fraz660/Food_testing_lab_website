@@ -16,8 +16,8 @@ import {
 } from 'react-icons/fa';
 
 const Equipment = () => {
-  const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
-  const [equipmentRef, equipmentInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [heroRef, heroInView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const [equipmentRef, equipmentInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [selectedEquipment, setSelectedEquipment] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [equipment, setEquipment] = useState([]);
@@ -165,21 +165,21 @@ const Equipment = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-8"
+            className="text-center space-y-4 md:space-y-8"
           >
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               Laboratory <span className="text-blue-200">Equipment</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
               State-of-the-art analytical instruments for precision testing and research
             </p>
-            <div className="flex justify-center items-center space-x-8">
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
               <div className="flex items-center space-x-2">
                 <FaCogs className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">
@@ -196,21 +196,22 @@ const Equipment = () => {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white sticky top-16 z-40 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
+      <section className="py-4 md:py-8 bg-white sticky top-16 z-40 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`flex items-center space-x-1 md:space-x-2 px-3 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
                   selectedCategory === category.id
                     ? 'bg-blue-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
                 }`}
               >
-                <category.icon className="h-4 w-4" />
-                <span>{category.name}</span>
+                <category.icon className="h-3 w-3 md:h-4 md:w-4" />
+                <span className="hidden sm:inline">{category.name}</span>
+                <span className="sm:hidden">{category.name.split(' ')[0]}</span>
               </button>
             ))}
           </div>
@@ -218,18 +219,18 @@ const Equipment = () => {
       </section>
 
       {/* Equipment Grid */}
-      <section ref={equipmentRef} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={equipmentRef} className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={equipmentInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
               Our <span className="text-gradient">Equipment</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
               Cutting-edge analytical instruments ensuring accurate and reliable results
             </p>
           </motion.div>
@@ -256,7 +257,7 @@ const Equipment = () => {
               <p className="text-gray-500">No equipment matches your current filter.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
               <AnimatePresence mode="wait">
                 {filteredEquipment.map((item, index) => (
                 <motion.div
@@ -265,38 +266,38 @@ const Equipment = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
                   onClick={() => openModal(item)}
                 >
                   {/* Equipment Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-48 md:h-64 overflow-hidden">
                     <img 
                       src={item.image} 
                       alt={item.name}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className={`absolute top-4 right-4 p-2 ${item.color} rounded-full`}>
-                      <item.icon className="h-5 w-5 text-white" />
+                    <div className={`absolute top-3 md:top-4 right-3 md:right-4 p-2 ${item.color} rounded-full`}>
+                      <item.icon className="h-4 w-4 md:h-5 md:w-5 text-white" />
                     </div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h3 className="text-lg font-bold">{item.name}</h3>
-                      <p className="text-sm text-gray-200">{item.fullName}</p>
+                    <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 text-white">
+                      <h3 className="text-base md:text-lg font-bold leading-tight">{item.name}</h3>
+                      <p className="text-xs md:text-sm text-gray-200 leading-tight">{item.fullName}</p>
                     </div>
                   </div>
 
                   {/* Equipment Info */}
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                  <div className="p-4 md:p-6">
+                    <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed line-clamp-3">
                       {item.description}
                     </p>
                     
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-gray-900">Key Applications:</h4>
+                    <div className="space-y-2 md:space-y-3">
+                      <h4 className="text-sm md:text-base font-semibold text-gray-900">Key Applications:</h4>
                       <ul className="space-y-1">
                         {item.applications.slice(0, 3).map((app, appIndex) => (
-                          <li key={appIndex} className="text-sm text-gray-600 flex items-center">
+                          <li key={appIndex} className="text-xs md:text-sm text-gray-600 flex items-center">
                             <div className="w-1 h-1 bg-blue-500 rounded-full mr-2"></div>
                             {app}
                           </li>
@@ -339,32 +340,32 @@ const Equipment = () => {
                 <img 
                   src={selectedEquipment.image} 
                   alt={selectedEquipment.name}
-                  className="w-full h-80 object-cover"
+                  className="w-full h-48 md:h-80 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <button
                   onClick={closeModal}
-                  className="absolute top-4 right-4 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200"
+                  className="absolute top-3 md:top-4 right-3 md:right-4 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200"
                 >
-                  <FaTimes className="h-5 w-5" />
+                  <FaTimes className="h-4 w-4 md:h-5 md:w-5" />
                 </button>
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h2 className="text-3xl font-bold mb-2">{selectedEquipment.name}</h2>
-                  <p className="text-xl text-gray-200">{selectedEquipment.fullName}</p>
+                <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 text-white">
+                  <h2 className="text-xl md:text-3xl font-bold mb-1 md:mb-2 leading-tight">{selectedEquipment.name}</h2>
+                  <p className="text-sm md:text-xl text-gray-200 leading-tight">{selectedEquipment.fullName}</p>
                 </div>
               </div>
 
               {/* Modal Content */}
-              <div className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="p-4 md:p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                   {/* Description & Applications */}
-                  <div className="space-y-6">
+                  <div className="space-y-4 md:space-y-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                        <FaInfoCircle className="h-6 w-6 text-blue-600 mr-2" />
+                      <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 flex items-center">
+                        <FaInfoCircle className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mr-2" />
                         Description
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">{selectedEquipment.description}</p>
+                      <p className="text-sm md:text-base text-gray-600 leading-relaxed">{selectedEquipment.description}</p>
                     </div>
 
                     <div>
@@ -421,7 +422,7 @@ const Equipment = () => {
 
       {/* Features Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -1,0 +1,15 @@
+node_modules
+npm-debug.log
+.npm
+.git
+.gitignore
+README.md
+.env
+.vercel
+.railway
+Dockerfile
+.dockerignore
+client/node_modules
+client/build
+client/.env
+*.log

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -70,18 +71,18 @@ const About = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center space-y-8"
+            className="text-center space-y-4 md:space-y-8"
           >
-            <h1 className="text-5xl md:text-6xl font-bold">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               About <span className="text-blue-200">GTFTL</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
               Leading the way in analytical testing and scientific education since 2022
             </p>
           </motion.div>
@@ -89,40 +90,40 @@ const About = () => {
       </section>
 
       {/* Company Overview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
-              <h2 className="text-4xl font-bold text-gray-900">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 Excellence in <span className="text-gradient">Testing & Training</span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accredited 
                 analytical testing laboratory. Located in the heart of Odisha, we specialize in food, 
                 pharmaceutical, marine products, and forensic sample analysis.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Our laboratory serves as both a commercial testing facility and a skill development hub, 
                 providing opportunities for students, researchers, and industry professionals to gain 
                 hands-on experience with cutting-edge analytical techniques.
               </p>
               
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <FaFlask className="h-10 w-10 text-blue-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-blue-600">8+</div>
-                  <div className="text-sm text-gray-600">Testing Categories</div>
+              <div className="grid grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">
+                <div className="text-center p-3 md:p-4 bg-blue-50 rounded-lg">
+                  <FaFlask className="h-8 w-8 md:h-10 md:w-10 text-blue-600 mx-auto mb-2" />
+                  <div className="text-xl md:text-2xl font-bold text-blue-600">8+</div>
+                  <div className="text-xs md:text-sm text-gray-600">Testing Categories</div>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <FaCertificate className="h-10 w-10 text-green-600 mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-green-600">NABL</div>
-                  <div className="text-sm text-gray-600">Accredited</div>
+                <div className="text-center p-3 md:p-4 bg-green-50 rounded-lg">
+                  <FaCertificate className="h-8 w-8 md:h-10 md:w-10 text-green-600 mx-auto mb-2" />
+                  <div className="text-xl md:text-2xl font-bold text-green-600">NABL</div>
+                  <div className="text-xs md:text-sm text-gray-600">Accredited</div>
                 </div>
               </div>
             </motion.div>
@@ -132,28 +133,28 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-4 md:space-y-6"
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-2 md:gap-4">
                 <img 
                   src="/images/IMG_20250821_132516623.jpg" 
                   alt="Laboratory Equipment" 
-                  className="rounded-lg shadow-lg h-48 w-full object-cover"
+                  className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
                 <img 
                   src="/images/IMG_20250821_132537634.jpg" 
                   alt="Testing Facility" 
-                  className="rounded-lg shadow-lg h-48 w-full object-cover"
+                  className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
                 <img 
                   src="/images/IMG_20250821_132559084.jpg" 
                   alt="Analysis Equipment" 
-                  className="rounded-lg shadow-lg h-48 w-full object-cover"
+                  className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
                 <img 
                   src="/images/IMG_20250821_132615414.jpg" 
                   alt="Lab Instruments" 
-                  className="rounded-lg shadow-lg h-48 w-full object-cover"
+                  className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
               </div>
             </motion.div>
@@ -162,31 +163,31 @@ const About = () => {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section ref={missionRef} className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section ref={missionRef} className="py-12 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={missionInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-8 md:mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
               Our <span className="text-gradient">Mission & Vision</span>
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={missionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-center p-8 bg-white rounded-2xl shadow-lg"
+              className="text-center p-4 md:p-8 bg-white rounded-2xl shadow-lg"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FaBullseye className="h-8 w-8 text-blue-600" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <FaBullseye className="h-6 w-6 md:h-8 md:w-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Mission</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 To bridge the gap between academia, industry, and regulatory standards by providing 
                 accurate, reliable, and timely analytical services while fostering scientific education 
                 and skill development.
@@ -197,13 +198,13 @@ const About = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={missionInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-center p-8 bg-white rounded-2xl shadow-lg"
+              className="text-center p-4 md:p-8 bg-white rounded-2xl shadow-lg"
             >
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FaEye className="h-8 w-8 text-green-600" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <FaEye className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Vision</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 To be a leading analytical testing laboratory that contributes significantly to public health, 
                 food safety, and industrial advancement through scientific excellence and innovation.
               </p>
@@ -230,7 +231,7 @@ const About = () => {
 
       {/* Core Values */}
       <section ref={valuesRef} className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={valuesInView ? { opacity: 1, y: 0 } : {}}
@@ -267,7 +268,7 @@ const About = () => {
 
       {/* Timeline */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -318,7 +319,7 @@ const About = () => {
 
       {/* Partnership Section */}
       <section ref={partnershipsRef} className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={partnershipsInView ? { opacity: 1, y: 0 } : {}}
