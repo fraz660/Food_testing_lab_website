@@ -2,13 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
+const mongoose = require('mongoose');
 
 // Import configuration
 const connectDB = require('./config/database');
 
 // Import route files
 const contactRoutes = require('./routes/contact');
-const internshipRoutes = require('./routes/internship');
+const internshipRoutes = require('./routes/iUnternship');
 const authRoutes = require('./routes/auth');
 const blogRoutes = require('./routes/blog');
 const serviceRequestRoutes = require('./routes/serviceRequest');
@@ -33,10 +34,16 @@ connectDB();
 // Middleware
 const corsOptions = {
   origin: NODE_ENV === 'production' 
-    ? [process.env.CLIENT_URL || 'https://your-frontend-domain.vercel.app', 'https://your-frontend-domain.netlify.app']
+    ? [
+        process.env.CLIENT_URL || 'https://ftl.org.in',
+        'https://ftl.org.in',
+        'https://www.ftl.org.in'
+      ]
     : ['http://localhost:3000', 'http://127.0.0.1:3000'],
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 };
 
 app.use(cors(corsOptions));
@@ -86,12 +93,17 @@ app.use('/api/admin/pages', pageRoutes);
 app.use('/api/admin/internships', internshipManagementRoutes);
 app.use('/api/admin/services', serviceManagementRoutes);
 
-// Health check endpoint
+// Enhanced Health check endpoint
 app.get('/api/health', (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? 'connected' : 'disconnected';
   res.json({ 
     status: 'OK', 
     message: 'GTFTL Backend Server is running',
-    timestamp: new Date().toISOString()
+    environment: NODE_ENV,
+    database: dbStatus,
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    version: '1.0.0'
   });
 });
 
@@ -113,8 +125,26 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
+// Start server with error handling
+const server = app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`📝 API Documentation: http://localhost:${PORT}/api/health`);
+});
+
+// Handle port already in use error
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`❌ Port ${PORT} is already in use!`);
+    console.log(`\n💡 Solutions:`);
+    console.log(`   1. Kill the process using port ${PORT}:`);
+    console.log(`      Windows: netstat -ano | findstr :${PORT}`);
+    console.log(`      Then: taskkill /PID <PID> /F`);
+    console.log(`   2. Or change PORT in .env file`);
+    console.log(`   3. Or use a different port: PORT=5001 npm start\n`);
+    process.exit(1);
+  } else {
+    console.error('❌ Server error:', err);
+    process.exit(1);
+  }
 });

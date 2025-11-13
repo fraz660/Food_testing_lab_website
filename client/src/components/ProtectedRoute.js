@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../api/config';
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -21,7 +22,7 @@ const ProtectedRoute = ({ children }) => {
     }
 
     try {
-      await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/verify`, {
+      await axios.get(`${API_BASE_URL}/api/auth/verify`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setIsAuthenticated(true);

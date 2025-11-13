@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 // API Base URL Configuration
-// For now, we'll use the same domain with /api routes on Vercel
+// Production: Use backend subdomain, Development: Use localhost
 const API_BASE_URL = process.env.REACT_APP_API_URL || 
   (process.env.NODE_ENV === 'production' 
-    ? window.location.origin  // Use same domain for API calls
-    : 'http://localhost:5000');
+    ? 'https://backend.ftl.org.in'  // Production backend URL
+    : 'http://localhost:5000');      // Development backend URL
 
 // Create axios instance with base configuration
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
+  timeout: 30000, // Increased timeout for production (30 seconds)
   headers: {
     'Content-Type': 'application/json',
   },

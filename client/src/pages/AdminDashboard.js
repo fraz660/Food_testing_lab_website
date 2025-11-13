@@ -1193,7 +1193,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
       });
       
       if (member.profileImage) {
-        setImagePreview(`http://localhost:5000${member.profileImage}`);
+        setImagePreview(`${API_BASE_URL}${member.profileImage}`);
       }
       
       setShowCreateForm(true);
@@ -1361,7 +1361,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                           {member.profileImage ? (
                             <img 
                               className="h-10 w-10 rounded-full object-cover" 
-                              src={`http://localhost:5000${member.profileImage}`} 
+                              src={`${API_BASE_URL}${member.profileImage}`} 
                               alt={member.name}
                             />
                           ) : (
@@ -1929,7 +1929,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
       });
       
       if (item.equipmentImages && item.equipmentImages.length > 0) {
-        setImagePreview(item.equipmentImages.map(img => `http://localhost:5000${img}`));
+        setImagePreview(item.equipmentImages.map(img => `${API_BASE_URL}${img}`));
       }
       
       setShowCreateForm(true);
