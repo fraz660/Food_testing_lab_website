@@ -12,7 +12,8 @@ import {
   FaUsers,
   FaGraduationCap,
   FaEnvelope,
-  FaBlog
+  FaBlog,
+  FaClipboardList
 } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -33,7 +34,9 @@ const Navbar = () => {
     { path: '/', label: 'Home', icon: FaHome },
     { path: '/about', label: 'About', icon: FaInfoCircle },
     { path: '/services', label: 'Services', icon: FaServicestack },
+    { path: '/test-menu', label: 'Test Menu', icon: FaClipboardList },
     { path: '/equipment', label: 'Equipment', icon: FaCogs },
+    { path: '/research', label: 'Research', icon: FaFlask },
     { path: '/team', label: 'Team', icon: FaUsers },
     // { path: '/blog', label: 'Blog', icon: FaBlog },
     { path: '/contact', label: 'Contact', icon: FaEnvelope },
@@ -42,30 +45,28 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`fixed w-full h-18 lg:h-20 z-50 transition-all duration-300 ${
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${
       scrolled 
         ? 'bg-green-900 shadow-lg' 
-        : 'bg-green-900 shadow-lg'
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-200">
             <div className="relative m-2">
              <img 
                 src="/images/Logo.png" 
                 alt="GTFTL Logo" 
-                className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-18 lg:w-18 object-contain transition-all duration-300 drop-shadow-sm"
+                className="h-14 w-14 sm:h-16 sm:w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 object-contain transition-all duration-300 drop-shadow-sm"
               />
               
             </div>
             <div className="flex flex-col">
-              <span className={`font-bold text-sm sm:text-lg leading-none ${
-                scrolled ? 'text-white' : 'text-white'
-              }`}>
+              <span className={`font-bold text-base sm:text-xl md:text-2xl leading-none text-white`}>
                 GTFTL
               </span>
-              <span className={`text-xs sm:text-sm leading-none ${
+              <span className={`text-xs sm:text-sm md:text-base leading-none ${
                 scrolled ? 'text-green-200' : 'text-green-100'
               }`}>
                 Food Testing Lab
@@ -74,7 +75,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden xl:flex items-center space-x-2">
             <div className="flex items-baseline space-x-1">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -82,7 +83,7 @@ const Navbar = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 flex items-center space-x-1 ${
+                    className={`px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-all duration-200 flex items-center space-x-1 ${
                       isActive(item.path)
                         ? scrolled
                           ? 'bg-green-100 text-green-800'
@@ -102,7 +103,7 @@ const Navbar = () => {
             {/* Apply Internship Button */}
             <Link
               to="/internship"
-              className={`ml-4 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center space-x-2 ${
+              className={`ml-4 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all duration-200 flex items-center space-x-2 ${
                 scrolled
                   ? 'bg-green-500 text-white hover:bg-green-600'
                   : 'bg-white bg-opacity-20 text-white hover:bg-white hover:bg-opacity-30'
@@ -114,7 +115,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 ${
@@ -141,7 +142,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-green-900 shadow-lg"
+            className="xl:hidden bg-green-900 shadow-lg"
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => {

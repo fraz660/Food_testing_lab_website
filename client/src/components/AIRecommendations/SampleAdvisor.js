@@ -270,7 +270,7 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
           className="bg-white rounded-xl max-w-7xl w-full max-h-[95vh] overflow-hidden shadow-2xl"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-6">
+          <div className="bg-gradient-to-r from-green-600 to-green-600 text-white p-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <FaRobot className="w-8 h-8" />
@@ -305,7 +305,7 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                 <div className="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-xl border border-green-200">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-gray-800 flex items-center">
-                      <FaLightbulb className="w-5 h-5 text-yellow-500 mr-2" />
+                      <FaLightbulb className="w-5 h-5 text-green-500 mr-2" />
                       AI Recommendations
                     </h3>
                     <div className="flex items-center space-x-2">
@@ -321,7 +321,7 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                       <ul className="space-y-1">
                         {recommendations.insights.customAdvice.map((advice, index) => (
                           <li key={index} className="flex items-start text-sm text-gray-600">
-                            <FaInfoCircle className="w-3 h-3 text-blue-500 mr-2 mt-1 flex-shrink-0" />
+                            <FaInfoCircle className="w-3 h-3 text-green-500 mr-2 mt-1 flex-shrink-0" />
                             {advice}
                           </li>
                         ))}
@@ -337,15 +337,15 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
 
                 {/* Risk Factors */}
                 {recommendations.insights.riskFactors.length > 0 && (
-                  <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
+                  <div className="bg-orange-50 border border-green-200 rounded-xl p-6">
                     <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                      <FaExclamationTriangle className="w-5 h-5 text-orange-500 mr-2" />
+                      <FaExclamationTriangle className="w-5 h-5 text-green-500 mr-2" />
                       Risk Assessment
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {recommendations.insights.riskFactors.map((risk, index) => (
                         <div key={index} className={`p-4 rounded-lg ${
-                          risk.risk === 'high' ? 'bg-red-100 border border-red-200' : 'bg-yellow-100 border border-yellow-200'
+                          risk.risk === 'high' ? 'bg-green-100 border border-green-200' : 'bg-green-100 border border-green-200'
                         }`}>
                           <h4 className="font-semibold text-gray-800 mb-1">{risk.factor}</h4>
                           <p className="text-sm text-gray-600 mb-2">{risk.description}</p>
@@ -359,7 +359,7 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                 {/* Testing Packages */}
                 <div>
                   <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <FaFlask className="w-5 h-5 text-blue-500 mr-2" />
+                    <FaFlask className="w-5 h-5 text-green-500 mr-2" />
                     Recommended Testing Packages
                   </h3>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -369,12 +369,12 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                         whileHover={{ scale: 1.02 }}
                         className={`border-2 rounded-xl p-6 cursor-pointer transition-all ${
                           selectedPackage === pkg.id 
-                            ? 'border-blue-500 bg-blue-50' 
+                            ? 'border-green-500 bg-blue-50' 
                             : 'border-gray-200 hover:border-gray-300'
                         } ${
                           pkg.priority === 'essential' ? 'ring-2 ring-green-200' :
-                          pkg.priority === 'recommended' ? 'ring-2 ring-blue-200' :
-                          pkg.priority === 'premium' ? 'ring-2 ring-purple-200' : ''
+                          pkg.priority === 'recommended' ? 'ring-2 ring-green-200' :
+                          pkg.priority === 'premium' ? 'ring-2 ring-green-200' : ''
                         }`}
                         onClick={() => setSelectedPackage(selectedPackage === pkg.id ? null : pkg.id)}
                       >
@@ -384,8 +384,8 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                               <h4 className="text-lg font-bold text-gray-800">{pkg.name}</h4>
                               <span className={`ml-3 px-2 py-1 rounded-full text-xs font-semibold ${
                                 pkg.priority === 'essential' ? 'bg-green-100 text-green-800' :
-                                pkg.priority === 'recommended' ? 'bg-blue-100 text-blue-800' :
-                                pkg.priority === 'premium' ? 'bg-purple-100 text-purple-800' :
+                                pkg.priority === 'recommended' ? 'bg-green-100 text-green-800' :
+                                pkg.priority === 'premium' ? 'bg-green-100 text-green-800' :
                                 'bg-gray-100 text-gray-800'
                               }`}>
                                 {pkg.priority.toUpperCase()}
@@ -413,7 +413,7 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                           <div className="text-right">
                             <div className={`text-sm font-medium ${
                               pkg.suitability >= 90 ? 'text-green-600' :
-                              pkg.suitability >= 80 ? 'text-blue-600' : 'text-yellow-600'
+                              pkg.suitability >= 80 ? 'text-green-600' : 'text-green-600'
                             }`}>
                               {pkg.suitability}% Match
                             </div>
@@ -466,9 +466,9 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                 </div>
 
                 {/* Cost Optimization */}
-                <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
+                <div className="bg-yellow-50 border border-green-200 rounded-xl p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                    <FaRupeeSign className="w-5 h-5 text-yellow-600 mr-2" />
+                    <FaRupeeSign className="w-5 h-5 text-green-600 mr-2" />
                     Cost Optimization Tips
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -488,9 +488,9 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                 </div>
 
                 {/* Timeline Recommendation */}
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <div className="bg-blue-50 border border-green-200 rounded-xl p-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                    <FaCalendarAlt className="w-5 h-5 text-blue-600 mr-2" />
+                    <FaCalendarAlt className="w-5 h-5 text-green-600 mr-2" />
                     Timeline Recommendation
                   </h3>
                   <p className="text-gray-700">{recommendations.insights.timeline}</p>
@@ -504,7 +504,7 @@ const SampleAdvisor = ({ productInfo, isOpen, onClose }) => {
                   <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
                     Submit Sample Request
                   </button>
-                  <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  <button className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
                     Schedule Consultation
                   </button>
                 </div>

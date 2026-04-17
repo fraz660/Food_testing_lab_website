@@ -34,6 +34,90 @@ const Equipment = () => {
     { id: 'General Laboratory', name: 'General Lab', icon: FaFlask }
   ];
 
+  // Fallback equipment data when API is unavailable
+  const fallbackEquipment = [
+    {
+      id: 'f1', name: 'LC-MS/MS', fullName: 'Liquid Chromatography Mass Spectrometry',
+      category: 'Mass Spectrometry', image: '/images/IMG_20250821_132458896.jpg',
+      description: 'Advanced LC-MS/MS system for precise identification and quantification of compounds in complex matrices. Used extensively in food safety, pharmaceutical, and forensic testing.',
+      applications: ['Pesticide residue analysis', 'Mycotoxin detection', 'Drug purity testing', 'Forensic toxicology'],
+      specifications: { 'Type': 'Triple Quadrupole', 'Application': 'Quantitative Analysis', 'Status': 'Operational' },
+      icon: FaChartLine, color: 'bg-green-500'
+    },
+    {
+      id: 'f2', name: 'GC-MS/MS', fullName: 'Gas Chromatography Mass Spectrometry',
+      category: 'Mass Spectrometry', image: '/images/IMG_20250821_132516623.jpg',
+      description: 'High-sensitivity GC-MS/MS for volatile and semi-volatile compound analysis. Essential for pesticide testing and environmental contaminant detection.',
+      applications: ['Volatile organic compounds', 'Pesticide screening', 'Fatty acid profiling', 'Environmental analysis'],
+      specifications: { 'Type': 'Triple Quadrupole', 'Application': 'VOC Analysis', 'Status': 'Operational' },
+      icon: FaChartLine, color: 'bg-green-500'
+    },
+    {
+      id: 'f3', name: 'ICP-MS', fullName: 'Inductively Coupled Plasma Mass Spectrometry',
+      category: 'Mass Spectrometry', image: '/images/IMG_20250821_132537634.jpg',
+      description: 'Ultra-trace level elemental analysis system for detecting heavy metals and trace elements in food, water, and pharmaceutical samples.',
+      applications: ['Heavy metal testing (Pb, Cd, As, Hg)', 'Mineral content analysis', 'Water quality testing', 'Trace element quantification'],
+      specifications: { 'Type': 'Quadrupole ICP-MS', 'Application': 'Elemental Analysis', 'Status': 'Operational' },
+      icon: FaAtom, color: 'bg-green-500'
+    },
+    {
+      id: 'f4', name: 'HPLC', fullName: 'High Performance Liquid Chromatography',
+      category: 'Chromatography', image: '/images/IMG_20250821_132559084.jpg',
+      description: 'Versatile HPLC system for separation and quantification of non-volatile compounds. Widely used in food additive, vitamin, and pharmaceutical analysis.',
+      applications: ['Vitamin analysis', 'Food additive quantification', 'Aflatoxin detection', 'Antibiotic residue testing'],
+      specifications: { 'Type': 'Binary/Quaternary Pump', 'Application': 'Liquid Chromatography', 'Status': 'Operational' },
+      icon: FaChartLine, color: 'bg-green-500'
+    },
+    {
+      id: 'f5', name: 'FTIR', fullName: 'Fourier Transform Infrared Spectroscopy',
+      category: 'Spectroscopy', image: '/images/IMG_20250821_132615414.jpg',
+      description: 'FTIR spectrometer for molecular identification and structural analysis. Used for food adulteration detection and material characterization.',
+      applications: ['Food adulteration detection', 'Material identification', 'Polymer analysis', 'Quality verification'],
+      specifications: { 'Type': 'FTIR Spectrometer', 'Application': 'Molecular Analysis', 'Status': 'Operational' },
+      icon: FaAtom, color: 'bg-green-600'
+    },
+    {
+      id: 'f6', name: 'UV-Vis Spectrophotometer', fullName: 'UV-Visible Spectrophotometer',
+      category: 'Spectroscopy', image: '/images/IMG_20250821_132650232.jpg',
+      description: 'Double-beam UV-Vis spectrophotometer for absorption measurements. Essential for colorimetric assays and concentration determination.',
+      applications: ['Colorimetric analysis', 'Concentration measurement', 'Enzyme assays', 'Purity assessment'],
+      specifications: { 'Type': 'Double Beam', 'Application': 'Absorption Spectroscopy', 'Status': 'Operational' },
+      icon: FaAtom, color: 'bg-green-600'
+    },
+    {
+      id: 'f7', name: 'Bomb Calorimeter', fullName: 'Bomb Calorimeter System',
+      category: 'General Laboratory', image: '/images/IMG_20250821_132700981.jpg',
+      description: 'Precision bomb calorimeter for determining caloric value of food products. Critical for nutritional labeling compliance.',
+      applications: ['Caloric value determination', 'Nutritional labeling', 'Energy content analysis', 'Food product development'],
+      specifications: { 'Type': 'Oxygen Bomb', 'Application': 'Calorimetry', 'Status': 'Operational' },
+      icon: FaFlask, color: 'bg-gray-500'
+    },
+    {
+      id: 'f8', name: 'Protein Analyzer', fullName: 'Kjeldahl Protein Analysis System',
+      category: 'General Laboratory', image: '/images/IMG_20250821_132720113.jpg',
+      description: 'Automated Kjeldahl system for nitrogen and protein content determination in food samples. Essential for proximate analysis.',
+      applications: ['Protein content analysis', 'Nitrogen determination', 'Proximate analysis', 'Feed analysis'],
+      specifications: { 'Type': 'Kjeldahl System', 'Application': 'Protein Analysis', 'Status': 'Operational' },
+      icon: FaFlask, color: 'bg-gray-500'
+    },
+    {
+      id: 'f9', name: 'Fat Analyzer', fullName: 'Soxhlet Fat Extraction System',
+      category: 'General Laboratory', image: '/images/IMG_20250821_132737052.jpg',
+      description: 'Automated Soxhlet extraction system for accurate fat content determination in food products.',
+      applications: ['Fat content analysis', 'Lipid extraction', 'Oil content measurement', 'Nutritional analysis'],
+      specifications: { 'Type': 'Soxhlet Extractor', 'Application': 'Fat Analysis', 'Status': 'Operational' },
+      icon: FaFlask, color: 'bg-gray-500'
+    },
+    {
+      id: 'f10', name: 'Fiber Analyzer', fullName: 'Crude Fiber Analysis System',
+      category: 'General Laboratory', image: '/images/IMG_20250821_132800027.jpg',
+      description: 'Automated fiber analysis system for determination of crude fiber, NDF, and ADF in food and feed samples.',
+      applications: ['Crude fiber analysis', 'Dietary fiber testing', 'Feed quality assessment', 'Nutritional profiling'],
+      specifications: { 'Type': 'Fiber Analyzer', 'Application': 'Fiber Analysis', 'Status': 'Operational' },
+      icon: FaFlask, color: 'bg-gray-500'
+    }
+  ];
+
   // Fetch equipment from API
   useEffect(() => {
     fetchEquipment();
@@ -47,7 +131,7 @@ const Equipment = () => {
       const response = await api.get('/api/equipment');
       console.log('Equipment API response:', response.data);
       
-      if (response.data.success) {
+      if (response.data.success && response.data.data.length > 0) {
         const equipmentData = response.data.data.map(item => ({
           id: item._id,
           name: item.name,
@@ -71,13 +155,18 @@ const Equipment = () => {
         }));
         
         setEquipment(equipmentData);
+      } else {
+        // API returned empty data, use fallback
+        console.log('API returned empty data, using fallback equipment');
+        setEquipment(fallbackEquipment);
       }
     } catch (error) {
       console.error('Error fetching equipment:', error);
-      setError('Failed to load equipment data');
       
-      // Fallback to minimal static data on error
-      setEquipment([]);
+      // Fallback to comprehensive static data on error
+      console.log('Using fallback equipment data');
+      setEquipment(fallbackEquipment);
+      setError(null); // Don't show error, just use fallback silently
     } finally {
       setLoading(false);
     }
@@ -101,9 +190,9 @@ const Equipment = () => {
   const getCategoryColor = (category) => {
     switch (category) {
       case 'Chromatography':
-        return 'bg-blue-500';
+        return 'bg-green-500';
       case 'Spectroscopy':
-        return 'bg-purple-500';
+        return 'bg-green-600';
       case 'Mass Spectrometry':
         return 'bg-green-500';
       case 'Microbiology':
@@ -163,9 +252,9 @@ const Equipment = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20 lg:pt-24">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -174,9 +263,9 @@ const Equipment = () => {
             className="text-center space-y-4 md:space-y-8"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-              Laboratory <span className="text-blue-200">Equipment</span>
+              Laboratory <span className="text-green-200">Equipment</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed px-2">
               State-of-the-art analytical instruments for precision testing and research
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
@@ -187,7 +276,7 @@ const Equipment = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaAtom className="h-6 w-6 text-yellow-400" />
+                <FaAtom className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Advanced Technology</span>
               </div>
             </div>
@@ -205,8 +294,8 @@ const Equipment = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center space-x-1 md:space-x-2 px-3 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
+                    ? 'bg-green-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-green-600'
                 }`}
               >
                 <category.icon className="h-3 w-3 md:h-4 md:w-4" />
@@ -237,15 +326,15 @@ const Equipment = () => {
 
           {loading ? (
             <div className="flex justify-center items-center py-20">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
               <span className="ml-4 text-lg text-gray-600">Loading equipment...</span>
             </div>
           ) : error ? (
             <div className="text-center py-20">
-              <div className="text-red-600 text-lg mb-4">{error}</div>
+              <div className="text-green-600 text-lg mb-4">{error}</div>
               <button
                 onClick={fetchEquipment}
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
               >
                 Retry
               </button>
@@ -298,7 +387,7 @@ const Equipment = () => {
                       <ul className="space-y-1">
                         {item.applications.slice(0, 3).map((app, appIndex) => (
                           <li key={appIndex} className="text-xs md:text-sm text-gray-600 flex items-center">
-                            <div className="w-1 h-1 bg-blue-500 rounded-full mr-2"></div>
+                            <div className="w-1 h-1 bg-green-500 rounded-full mr-2"></div>
                             {app}
                           </li>
                         ))}
@@ -306,8 +395,8 @@ const Equipment = () => {
                     </div>
 
                     <div className="mt-6 flex items-center justify-between">
-                      <span className="text-sm text-blue-600 font-medium">View Details</span>
-                      <FaEye className="h-4 w-4 text-blue-600" />
+                      <span className="text-sm text-green-600 font-medium">View Details</span>
+                      <FaEye className="h-4 w-4 text-green-600" />
                     </div>
                   </div>
                 </motion.div>
@@ -362,7 +451,7 @@ const Equipment = () => {
                   <div className="space-y-4 md:space-y-6">
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 flex items-center">
-                        <FaInfoCircle className="h-5 w-5 md:h-6 md:w-6 text-blue-600 mr-2" />
+                        <FaInfoCircle className="h-5 w-5 md:h-6 md:w-6 text-green-600 mr-2" />
                         Description
                       </h3>
                       <p className="text-sm md:text-base text-gray-600 leading-relaxed">{selectedEquipment.description}</p>
@@ -387,7 +476,7 @@ const Equipment = () => {
                   {/* Specifications */}
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                      <FaCogs className="h-6 w-6 text-purple-600 mr-2" />
+                      <FaCogs className="h-6 w-6 text-green-600 mr-2" />
                       Specifications
                     </h3>
                     <div className="space-y-4">
@@ -441,7 +530,7 @@ const Equipment = () => {
                 icon: FaAtom,
                 title: 'High Precision',
                 description: 'Advanced instruments ensuring accurate and reliable results',
-                color: 'text-blue-600'
+                color: 'text-green-600'
               },
               {
                 icon: FaCogs,
@@ -453,13 +542,13 @@ const Equipment = () => {
                 icon: FaChartLine,
                 title: 'Real-time Monitoring',
                 description: 'Continuous monitoring and data logging capabilities',
-                color: 'text-purple-600'
+                color: 'text-green-600'
               },
               {
                 icon: FaEye,
                 title: 'Quality Control',
                 description: 'Rigorous quality control measures and validation protocols',
-                color: 'text-orange-600'
+                color: 'text-green-600'
               }
             ].map((feature, index) => (
               <motion.div

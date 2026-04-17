@@ -86,8 +86,8 @@ Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accr
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd food_testing_lad_website
+   git clone https://github.com/fraz660/Food_testing_lab_website
+   cd Food_testing_lab_website
    ```
 
 2. **Install all dependencies**

@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
 import ScrollToTop from './components/ScrollToTop';
+import SEO from './components/SEO';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -18,6 +19,12 @@ import Contact from './pages/Contact';
 
 import Blog from './pages/Blog';
 import StaticPage from './pages/StaticPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Research from './pages/Research';
+import SitemapPage from './pages/SitemapPage';
+import TestMenu from './pages/TestMenu';
+import NotFound from './pages/NotFound';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 
@@ -28,6 +35,7 @@ const AppContent = () => {
   return (
     <div className="App min-h-screen bg-gray-50">
       <ScrollToTop />
+      <SEO />
       {!isAdminRoute && <Navbar />}
       <main>
         <Routes>
@@ -42,9 +50,11 @@ const AppContent = () => {
           <Route path="/blog/:slug" element={<Blog />} />
           
           {/* Static Pages */}
-          <Route path="/privacy-policy" element={<StaticPage />} />
-          <Route path="/terms-of-service" element={<StaticPage />} />
-          <Route path="/sitemap" element={<StaticPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="/test-menu" element={<TestMenu />} />
+          <Route path="/research" element={<Research />} />
           <Route path="/page/:slug" element={<StaticPage />} />
           
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -58,6 +68,9 @@ const AppContent = () => {
               <AdminDashboard />
             </ProtectedRoute>
           } />
+
+          {/* 404 Catch-all */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       {!isAdminRoute && <Footer />}

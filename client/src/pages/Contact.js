@@ -38,7 +38,7 @@ const Contact = () => {
         'Gajapati, Odisha – 751200',
         'India'
       ],
-      color: 'text-blue-600'
+      color: 'text-green-600'
     },
     {
       icon: FaPhone,
@@ -55,7 +55,7 @@ const Contact = () => {
       details: [
         'info@ftl.org.in (General)',
       ],
-      color: 'text-purple-600'
+      color: 'text-green-600'
     },
     {
       icon: FaClock,
@@ -66,7 +66,7 @@ const Contact = () => {
         'Sunday: Closed',
         'Emergency Services Available'
       ],
-      color: 'text-orange-600'
+      color: 'text-green-600'
     }
   ];
 
@@ -113,9 +113,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20 lg:pt-24">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section ref={heroRef} className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -124,9 +124,9 @@ const Contact = () => {
             className="text-center space-y-8"
           >
             <h1 className="text-5xl md:text-6xl font-bold">
-              Contact <span className="text-blue-200">Us</span>
+              Contact <span className="text-green-200">Us</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Get in touch with our team for testing services, internship inquiries, or any questions
             </p>
             <div className="flex justify-center items-center space-x-8">
@@ -135,7 +135,7 @@ const Contact = () => {
                 <span className="text-sm font-medium">Expert Support</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaClock className="h-6 w-6 text-yellow-400" />
+                <FaClock className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Quick Response</span>
               </div>
             </div>
@@ -218,7 +218,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -233,7 +233,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -249,7 +249,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                       placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
@@ -262,7 +262,7 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                     >
                       <option value="">Select service type</option>
                       {serviceTypes.map((service, index) => (
@@ -282,7 +282,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                     placeholder="Please describe your requirements, questions, or how we can help you..."
                   />
                 </div>
@@ -291,7 +291,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ${
+                    className={`bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 ${
                       loading ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
                   >
@@ -372,10 +372,10 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="mailto:info@gtftl.com"
-                    className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors duration-200"
+                    href="mailto:info@ftl.org.in"
+                    className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl hover:bg-green-100 transition-colors duration-200"
                   >
-                    <div className="p-3 bg-blue-500 rounded-full">
+                    <div className="p-3 bg-green-500 rounded-full">
                       <FaEnvelope className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -392,15 +392,15 @@ const Contact = () => {
                 <div className="flex space-x-4">
                   <a
                     href="#"
-                    className="p-4 bg-blue-100 hover:bg-blue-200 rounded-full transition-colors duration-200"
+                    className="p-4 bg-green-100 hover:bg-green-200 rounded-full transition-colors duration-200"
                   >
-                    <FaLinkedin className="h-6 w-6 text-blue-600" />
+                    <FaLinkedin className="h-6 w-6 text-green-600" />
                   </a>
                   <a
                     href="#"
-                    className="p-4 bg-blue-100 hover:bg-blue-200 rounded-full transition-colors duration-200"
+                    className="p-4 bg-green-100 hover:bg-green-200 rounded-full transition-colors duration-200"
                   >
-                    <FaTwitter className="h-6 w-6 text-blue-600" />
+                    <FaTwitter className="h-6 w-6 text-green-600" />
                   </a>
                   <a
                     href="#"
@@ -419,7 +419,7 @@ const Contact = () => {
       </section>
 
       {/* Service Request CTA */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -431,19 +431,19 @@ const Contact = () => {
             <h2 className="text-4xl font-bold">
               Need Testing Services?
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-green-100 max-w-3xl mx-auto">
               Submit a formal service request for testing services with detailed sample information
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/services"
-                className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
+                className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
               >
                 View Services
               </a>
               <a
                 href="#"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
               >
                 Request Quote
               </a>

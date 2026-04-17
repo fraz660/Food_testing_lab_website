@@ -122,7 +122,7 @@ const AdminDashboard = () => {
         <h2 className="text-3xl font-bold text-gray-900">Blog Management</h2>
         <button
           onClick={handleAddNewBlog}
-          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 flex items-center space-x-2 transition-colors"
+          className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 flex items-center space-x-2 transition-colors"
         >
           <FaPlus className="h-4 w-4" />
           <span>Add New Blog</span>
@@ -142,11 +142,11 @@ const AdminDashboard = () => {
           </div>
           
           <div className="p-6 bg-blue-50 rounded-lg">
-            <p className="text-blue-800 font-semibold">✅ Blog Creation Form</p>
-            <p className="text-blue-600">Form is now working! You can implement the full blog creation form here.</p>
+            <p className="text-green-800 font-semibold">✅ Blog Creation Form</p>
+            <p className="text-green-600">Form is now working! You can implement the full blog creation form here.</p>
             <button
               onClick={() => setShowCreateForm(false)}
-              className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
             >
               Close Form
             </button>
@@ -212,7 +212,7 @@ const AdminDashboard = () => {
         <h2 className="text-3xl font-bold text-gray-900">Internship Management</h2>
         <button
           onClick={handleAddNewInternship}
-          className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 flex items-center space-x-2 transition-colors"
+          className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-600 flex items-center space-x-2 transition-colors"
         >
           <FaPlus className="h-4 w-4" />
           <span>Add New Internship</span>
@@ -231,12 +231,12 @@ const AdminDashboard = () => {
             </button>
           </div>
           
-          <div className="p-6 bg-purple-50 rounded-lg">
-            <p className="text-purple-800 font-semibold">✅ Internship Creation Form</p>
-            <p className="text-purple-600">Form is now working! You can implement the full internship creation form here.</p>
+          <div className="p-6 bg-green-600 rounded-lg">
+            <p className="text-green-600 font-semibold">✅ Internship Creation Form</p>
+            <p className="text-green-600">Form is now working! You can implement the full internship creation form here.</p>
             <button
               onClick={() => setShowInternshipForm(false)}
-              className="mt-4 bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700"
+              className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600"
             >
               Close Form
             </button>
@@ -257,7 +257,7 @@ const AdminDashboard = () => {
         <h2 className="text-3xl font-bold text-gray-900">Service Management</h2>
         <button
           onClick={handleAddNewService}
-          className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 flex items-center space-x-2 transition-colors"
+          className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 flex items-center space-x-2 transition-colors"
         >
           <FaPlus className="h-4 w-4" />
           <span>Add New Service</span>
@@ -277,11 +277,11 @@ const AdminDashboard = () => {
           </div>
           
           <div className="p-6 bg-indigo-50 rounded-lg">
-            <p className="text-indigo-800 font-semibold">✅ Service Creation Form</p>
-            <p className="text-indigo-600">Form is now working! You can implement the full service creation form here.</p>
+            <p className="text-green-800 font-semibold">✅ Service Creation Form</p>
+            <p className="text-green-600">Form is now working! You can implement the full service creation form here.</p>
             <button
               onClick={() => setShowServiceForm(false)}
-              className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+              className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
             >
               Close Form
             </button>
@@ -364,7 +364,7 @@ const AdminDashboard = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center px-4 py-3 text-left hover:bg-gray-50 ${
                       activeTab === tab.id
-                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-500'
+                        ? 'bg-blue-50 text-green-700 border-r-2 border-green-500'
                         : 'text-gray-600'
                     }`}
                   >

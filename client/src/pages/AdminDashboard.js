@@ -353,8 +353,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Total Contacts</p>
             <p className="text-2xl font-bold text-gray-900">{contacts.length}</p>
           </div>
-          <div className="p-3 bg-blue-100 rounded-full">
-            <FaEnvelope className="h-6 w-6 text-blue-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaEnvelope className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -387,8 +387,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Service Requests</p>
             <p className="text-2xl font-bold text-gray-900">{serviceRequests.length}</p>
           </div>
-          <div className="p-3 bg-cyan-100 rounded-full">
-            <FaCog className="h-6 w-6 text-cyan-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaCog className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -404,8 +404,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Blog Posts</p>
             <p className="text-2xl font-bold text-gray-900">{blogs.length}</p>
           </div>
-          <div className="p-3 bg-purple-100 rounded-full">
-            <FaBlog className="h-6 w-6 text-purple-600" />
+          <div className="p-3 bg-green-600 rounded-full">
+            <FaBlog className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -421,8 +421,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Team Members</p>
             <p className="text-2xl font-bold text-gray-900">{team.length}</p>
           </div>
-          <div className="p-3 bg-indigo-100 rounded-full">
-            <FaUsers className="h-6 w-6 text-indigo-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaUsers className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -439,8 +439,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Pages</p>
             <p className="text-2xl font-bold text-gray-900">{pages.length}</p>
           </div>
-          <div className="p-3 bg-yellow-100 rounded-full">
-            <FaBlog className="h-6 w-6 text-yellow-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaBlog className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -473,8 +473,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Lab Services</p>
             <p className="text-2xl font-bold text-gray-900">{labServices.length}</p>
           </div>
-          <div className="p-3 bg-pink-100 rounded-full">
-            <FaFlask className="h-6 w-6 text-pink-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaFlask className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -490,8 +490,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <p className="text-gray-500 text-sm">Lab Equipment</p>
             <p className="text-2xl font-bold text-gray-900">{equipment.length}</p>
           </div>
-          <div className="p-3 bg-teal-100 rounded-full">
-            <FaFlask className="h-6 w-6 text-teal-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaFlask className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -511,13 +511,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                 placeholder="Search contacts..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
             >
               <option value="all">All Status</option>
               <option value="new">New</option>
@@ -526,7 +526,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             </select>
             <button
               onClick={() => exportData(filteredContacts, 'contacts.csv')}
-              className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
             >
               <FaDownload className="h-4 w-4" />
               <span>Export</span>
@@ -567,8 +567,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     value={contact.status}
                     onChange={(e) => updateStatus('contacts', contact._id, e.target.value)}
                     className={`text-xs px-2 py-1 rounded-full border-0 ${
-                      contact.status === 'new' ? 'bg-yellow-100 text-yellow-800' :
-                      contact.status === 'contacted' ? 'bg-blue-100 text-blue-800' :
+                      contact.status === 'new' ? 'bg-green-100 text-green-800' :
+                      contact.status === 'contacted' ? 'bg-green-100 text-green-800' :
                       'bg-green-100 text-green-800'
                     }`}
                   >
@@ -579,14 +579,14 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                   <button 
-                    className="text-blue-600 hover:text-blue-900"
+                    className="text-green-600 hover:text-green-900"
                     onClick={() => viewContactDetails(contact)}
                     title="View Details"
                   >
                     <FaEye className="h-4 w-4" />
                   </button>
                   <button 
-                    className="text-red-600 hover:text-red-900"
+                    className="text-green-600 hover:text-green-900"
                     onClick={() => deleteContact(contact._id)}
                     title="Delete Contact"
                   >
@@ -623,13 +623,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   placeholder="Search applications..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
                 <option value="all">All Status</option>
                 <option value="pending">Pending</option>
@@ -679,9 +679,9 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       value={internship.status}
                       onChange={(e) => handleStatusUpdate('internships', internship._id, e.target.value)}
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        internship.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                        internship.status === 'pending' ? 'bg-green-100 text-green-800' :
                         internship.status === 'approved' ? 'bg-green-100 text-green-800' :
-                        'bg-red-100 text-red-800'
+                        'bg-green-100 text-green-800'
                       }`}
                     >
                       <option value="pending">Pending</option>
@@ -693,7 +693,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <div className="flex space-x-2">
                       <button
                         onClick={() => viewDetails('internship', internship)}
-                        className="text-blue-600 hover:text-blue-900"
+                        className="text-green-600 hover:text-green-900"
                         title="View Details"
                       >
                         <FaEye className="h-4 w-4" />
@@ -710,7 +710,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       )}
                       <button
                         onClick={() => handleDelete('internships', internship._id)}
-                        className="text-red-600 hover:text-red-900"
+                        className="text-green-600 hover:text-green-900"
                         title="Delete"
                       >
                         <FaTrash className="h-4 w-4" />
@@ -749,13 +749,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   placeholder="Search requests..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
                 <option value="all">All Status</option>
                 <option value="new">New</option>
@@ -798,9 +798,9 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   </td>
                   <td className="px-6 py-4">
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      request.urgency === 'Urgent' ? 'bg-red-100 text-red-800' :
-                      request.urgency === 'High' ? 'bg-orange-100 text-orange-800' :
-                      request.urgency === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
+                      request.urgency === 'Urgent' ? 'bg-green-100 text-green-800' :
+                      request.urgency === 'High' ? 'bg-green-100 text-green-800' :
+                      request.urgency === 'Medium' ? 'bg-green-100 text-green-800' :
                       'bg-gray-100 text-gray-800'
                     }`}>
                       {request.urgency}
@@ -816,13 +816,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       value={request.status}
                       onChange={(e) => handleStatusUpdate('service-requests', request._id, e.target.value)}
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        request.status === 'new' ? 'bg-yellow-100 text-yellow-800' :
-                        request.status === 'reviewed' ? 'bg-blue-100 text-blue-800' :
-                        request.status === 'quoted' ? 'bg-purple-100 text-purple-800' :
+                        request.status === 'new' ? 'bg-green-100 text-green-800' :
+                        request.status === 'reviewed' ? 'bg-green-100 text-green-800' :
+                        request.status === 'quoted' ? 'bg-green-100 text-green-800' :
                         request.status === 'accepted' ? 'bg-green-100 text-green-800' :
-                        request.status === 'in_progress' ? 'bg-cyan-100 text-cyan-800' :
+                        request.status === 'in_progress' ? 'bg-green-100 text-green-800' :
                         request.status === 'completed' ? 'bg-green-100 text-green-800' :
-                        'bg-red-100 text-red-800'
+                        'bg-green-100 text-green-800'
                       }`}
                     >
                       <option value="new">New</option>
@@ -838,7 +838,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <div className="flex space-x-2">
                       <button
                         onClick={() => viewDetails('service-request', request)}
-                        className="text-blue-600 hover:text-blue-900"
+                        className="text-green-600 hover:text-green-900"
                         title="View Details"
                       >
                         <FaEye className="h-4 w-4" />
@@ -852,7 +852,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       </button>
                       <button
                         onClick={() => handleDelete('service-requests', request._id)}
-                        className="text-red-600 hover:text-red-900"
+                        className="text-green-600 hover:text-green-900"
                         title="Delete"
                       >
                         <FaTrash className="h-4 w-4" />
@@ -944,7 +944,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   type="text"
                   value={profileData.username}
                   onChange={(e) => setProfileData(prev => ({...prev, username: e.target.value}))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   required
                 />
               </div>
@@ -957,7 +957,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   type="email"
                   value={profileData.email}
                   onChange={(e) => setProfileData(prev => ({...prev, email: e.target.value}))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   required
                 />
               </div>
@@ -975,7 +975,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="password"
                     value={profileData.currentPassword}
                     onChange={(e) => setProfileData(prev => ({...prev, currentPassword: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
                 
@@ -988,7 +988,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       type="password"
                       value={profileData.newPassword}
                       onChange={(e) => setProfileData(prev => ({...prev, newPassword: e.target.value}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
                   
@@ -1000,7 +1000,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       type="password"
                       value={profileData.confirmPassword}
                       onChange={(e) => setProfileData(prev => ({...prev, confirmPassword: e.target.value}))}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -1010,7 +1010,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+                className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 flex items-center space-x-2"
               >
                 <span>Save Changes</span>
               </button>
@@ -1387,7 +1387,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                         {member.department}
                       </span>
                     </td>
@@ -1399,7 +1399,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         member.isActive 
                           ? 'bg-green-100 text-green-800' 
-                          : 'bg-red-100 text-red-800'
+                          : 'bg-green-100 text-green-800'
                       }`}>
                         {member.isActive ? 'Active' : 'Inactive'}
                       </span>
@@ -1407,19 +1407,19 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                       <button
                         onClick={() => handleEditMember(member)}
-                        className="text-indigo-600 hover:text-indigo-900"
+                        className="text-green-600 hover:text-green-900"
                       >
                         <FaEdit />
                       </button>
                       <button
                         onClick={() => handleToggleStatus(member._id)}
-                        className="text-yellow-600 hover:text-yellow-900"
+                        className="text-green-600 hover:text-green-900"
                       >
                         <FaEye />
                       </button>
                       <button
                         onClick={() => handleDeleteMember(member._id)}
-                        className="text-red-600 hover:text-red-900"
+                        className="text-green-600 hover:text-green-900"
                       >
                         <FaTrash />
                       </button>
@@ -2146,15 +2146,15 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                         {item.category}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         item.operatingStatus === 'Operational' ? 'bg-green-100 text-green-800' :
-                        item.operatingStatus === 'Under Maintenance' ? 'bg-yellow-100 text-yellow-800' :
-                        item.operatingStatus === 'Out of Order' ? 'bg-red-100 text-red-800' :
+                        item.operatingStatus === 'Under Maintenance' ? 'bg-green-100 text-green-800' :
+                        item.operatingStatus === 'Out of Order' ? 'bg-green-100 text-green-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
                         {item.operatingStatus}
@@ -2167,19 +2167,19 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
                       <button
                         onClick={() => handleEditEquipment(item)}
-                        className="text-indigo-600 hover:text-indigo-900"
+                        className="text-green-600 hover:text-green-900"
                       >
                         <FaEdit />
                       </button>
                       <button
                         onClick={() => handleToggleStatus(item._id)}
-                        className="text-yellow-600 hover:text-yellow-900"
+                        className="text-green-600 hover:text-green-900"
                       >
                         <FaEye />
                       </button>
                       <button
                         onClick={() => handleDeleteEquipment(item._id)}
-                        className="text-red-600 hover:text-red-900"
+                        className="text-green-600 hover:text-green-900"
                       >
                         <FaTrash />
                       </button>
@@ -2602,7 +2602,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
           <h2 className="text-3xl font-bold text-gray-900">Pages Management</h2>
           <button
             onClick={() => setShowCreateForm(true)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 flex items-center space-x-2"
           >
             <FaPlus className="h-4 w-4" />
             <span>Create New Page</span>
@@ -2632,7 +2632,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={pageForm.title}
                     onChange={(e) => setPageForm(prev => ({...prev, title: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Enter page title"
                     required
                   />
@@ -2643,7 +2643,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <select
                     value={pageForm.pageType}
                     onChange={(e) => setPageForm(prev => ({...prev, pageType: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     {pageTypes.map(type => (
                       <option key={type.value} value={type.value}>{type.label}</option>
@@ -2659,7 +2659,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={pageForm.slug}
                     onChange={(e) => setPageForm(prev => ({...prev, slug: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="page-url-slug"
                   />
                   <p className="text-xs text-gray-500 mt-1">Leave empty to auto-generate from title</p>
@@ -2670,7 +2670,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <select
                     value={pageForm.status}
                     onChange={(e) => setPageForm(prev => ({...prev, status: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="published">Published</option>
                     <option value="draft">Draft</option>
@@ -2685,7 +2685,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   value={pageForm.metaDescription}
                   onChange={(e) => setPageForm(prev => ({...prev, metaDescription: e.target.value}))}
                   rows={2}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   placeholder="SEO meta description"
                   maxLength={160}
                 />
@@ -2710,7 +2710,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
+                  className="px-6 py-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700"
                 >
                   {editingPage ? 'Update Page' : 'Create Page'}
                 </button>
@@ -2741,7 +2741,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       <div className="text-sm text-gray-500">{page.metaDescription || 'No description'}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
                         {pageTypes.find(t => t.value === page.pageType)?.label || page.pageType}
                       </span>
                     </td>
@@ -2751,7 +2751,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                         page.status === 'published' ? 'bg-green-100 text-green-800' :
-                        page.status === 'draft' ? 'bg-yellow-100 text-yellow-800' :
+                        page.status === 'draft' ? 'bg-green-100 text-green-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
                         {page.status}
@@ -2773,7 +2773,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         </button>
                         <button
                           onClick={() => handleDeletePage(page._id)}
-                          className="text-red-600 hover:text-red-900"
+                          className="text-green-600 hover:text-green-900"
                           title="Delete"
                         >
                           <FaTrash className="h-4 w-4" />
@@ -3145,7 +3145,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                         internship.status === 'active' ? 'bg-green-100 text-green-800' :
-                        internship.status === 'paused' ? 'bg-yellow-100 text-yellow-800' :
+                        internship.status === 'paused' ? 'bg-green-100 text-green-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
                         {internship.status}
@@ -3162,7 +3162,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         </button>
                         <button
                           onClick={() => handleDeleteInternship(internship._id)}
-                          className="text-red-600 hover:text-red-900"
+                          className="text-green-600 hover:text-green-900"
                           title="Delete"
                         >
                           <FaTrash className="h-4 w-4" />
@@ -3313,7 +3313,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
           <h2 className="text-3xl font-bold text-gray-900">Service Management</h2>
           <button
             onClick={() => setShowCreateForm(true)}
-            className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 flex items-center space-x-2"
+            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-600 flex items-center space-x-2"
           >
             <FaPlus className="h-4 w-4" />
             <span>Add New Service</span>
@@ -3343,7 +3343,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={serviceForm.name}
                     onChange={(e) => setServiceForm(prev => ({...prev, name: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="e.g., Heavy Metal Analysis"
                     required
                   />
@@ -3354,7 +3354,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <select
                     value={serviceForm.category}
                     onChange={(e) => setServiceForm(prev => ({...prev, category: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     {serviceCategories.map(cat => (
                       <option key={cat} value={cat}>{cat}</option>
@@ -3379,7 +3379,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={serviceForm.price}
                     onChange={(e) => setServiceForm(prev => ({...prev, price: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="e.g., ₹2,500/sample"
                   />
                 </div>
@@ -3390,7 +3390,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={serviceForm.duration}
                     onChange={(e) => setServiceForm(prev => ({...prev, duration: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="e.g., 3-5 business days"
                   />
                 </div>
@@ -3400,7 +3400,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <select
                     value={serviceForm.status}
                     onChange={(e) => setServiceForm(prev => ({...prev, status: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
@@ -3416,7 +3416,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     value={serviceForm.features}
                     onChange={(e) => setServiceForm(prev => ({...prev, features: e.target.value}))}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Separate features with commas"
                   />
                 </div>
@@ -3427,7 +3427,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     value={serviceForm.requirements}
                     onChange={(e) => setServiceForm(prev => ({...prev, requirements: e.target.value}))}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Separate requirements with commas"
                   />
                 </div>
@@ -3439,7 +3439,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   id="featured"
                   checked={serviceForm.featured}
                   onChange={(e) => setServiceForm(prev => ({...prev, featured: e.target.checked}))}
-                  className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
                 />
                 <label htmlFor="featured" className="ml-2 block text-sm text-gray-900">
                   Mark as featured service
@@ -3456,7 +3456,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-700"
+                  className="px-6 py-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-600"
                 >
                   {editingService ? 'Update Service' : 'Create Service'}
                 </button>
@@ -3485,13 +3485,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4">
                       <div className="text-sm font-medium text-gray-900">{service.name}</div>
                       {service.featured && (
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                           Featured
                         </span>
                       )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
                         {service.category}
                       </span>
                     </td>
@@ -3504,8 +3504,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                         service.status === 'active' ? 'bg-green-100 text-green-800' :
-                        service.status === 'inactive' ? 'bg-red-100 text-red-800' :
-                        'bg-yellow-100 text-yellow-800'
+                        service.status === 'inactive' ? 'bg-green-100 text-green-800' :
+                        'bg-green-100 text-green-800'
                       }`}>
                         {service.status}
                       </span>
@@ -3514,14 +3514,14 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       <div className="flex space-x-2">
                         <button
                           onClick={() => startEditService(service)}
-                          className="text-purple-600 hover:text-purple-900"
+                          className="text-green-600 hover:text-green-600"
                           title="Edit"
                         >
                           <FaEdit className="h-4 w-4" />
                         </button>
                         <button
                           onClick={() => handleDeleteService(service._id)}
-                          className="text-red-600 hover:text-red-900"
+                          className="text-green-600 hover:text-green-900"
                           title="Delete"
                         >
                           <FaTrash className="h-4 w-4" />
@@ -3728,7 +3728,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
           <h2 className="text-3xl font-bold text-gray-900">Blog Management</h2>
           <button
             onClick={() => setShowCreateForm(true)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 flex items-center space-x-2"
           >
             <FaPlus className="h-4 w-4" />
             <span>Create New Post</span>
@@ -3758,7 +3758,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={blogForm.title}
                     onChange={(e) => setBlogForm(prev => ({...prev, title: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -3767,7 +3767,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <select
                     value={blogForm.category}
                     onChange={(e) => setBlogForm(prev => ({...prev, category: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     required
                   >
                     <option value="">Select Category</option>
@@ -3787,7 +3787,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   value={blogForm.excerpt}
                   onChange={(e) => setBlogForm(prev => ({...prev, excerpt: e.target.value}))}
                   rows={2}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   maxLength={300}
                   required
                 />
@@ -3810,7 +3810,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="file"
                     accept="image/*"
                     onChange={handleImageChange}
-                    className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-green-700 hover:file:bg-green-100"
                   />
                   {imagePreview && (
                     <div className="relative">
@@ -3825,7 +3825,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                           setBlogForm(prev => ({...prev, featuredImage: null}));
                           setImagePreview(null);
                         }}
-                        className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600"
+                        className="absolute -top-2 -right-2 bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-green-600"
                       >
                         ×
                       </button>
@@ -3842,7 +3842,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     type="text"
                     value={blogForm.tags}
                     onChange={(e) => setBlogForm(prev => ({...prev, tags: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="tag1, tag2, tag3"
                   />
                 </div>
@@ -3851,7 +3851,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <select
                     value={blogForm.status}
                     onChange={(e) => setBlogForm(prev => ({...prev, status: e.target.value}))}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="draft">Draft</option>
                     <option value="published">Published</option>
@@ -3870,7 +3870,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
+                  className="px-6 py-3 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700"
                 >
                   {editingBlog ? 'Update Post' : 'Create Post'}
                 </button>
@@ -3892,13 +3892,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     placeholder="Search posts..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
                 </div>
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 >
                   <option value="all">All Status</option>
                   <option value="draft">Draft</option>
@@ -3930,7 +3930,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       <div className="text-sm text-gray-500 max-w-xs truncate">{blog.excerpt}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                      <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
                         {blog.category}
                       </span>
                     </td>
@@ -3945,7 +3945,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                         blog.status === 'published' ? 'bg-green-100 text-green-800' :
-                        blog.status === 'draft' ? 'bg-yellow-100 text-yellow-800' :
+                        blog.status === 'draft' ? 'bg-green-100 text-green-800' :
                         'bg-gray-100 text-gray-800'
                       }`}>
                         {blog.status}
@@ -3958,7 +3958,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                       <div className="flex space-x-2">
                         <button
                           onClick={() => openBlogPreview(blog)}
-                          className="text-blue-600 hover:text-blue-900"
+                          className="text-green-600 hover:text-green-900"
                           title="Preview Blog"
                         >
                           <FaEye className="h-4 w-4" />
@@ -3972,7 +3972,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         </button>
                         <button
                           onClick={() => handleDelete('blogs', blog._id)}
-                          className="text-red-600 hover:text-red-900"
+                          className="text-green-600 hover:text-green-900"
                           title="Delete"
                         >
                           <FaTrash className="h-4 w-4" />
@@ -4016,7 +4016,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   
                   <div className="space-y-4">
                     <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-medium">
+                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full font-medium">
                         {previewBlog.category}
                       </span>
                       <span>{new Date(previewBlog.createdAt).toLocaleDateString()}</span>
@@ -4057,7 +4057,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <div className="text-sm text-gray-500">
                     Status: <span className={`font-medium ${
                       previewBlog.status === 'published' ? 'text-green-600' :
-                      previewBlog.status === 'draft' ? 'text-yellow-600' :
+                      previewBlog.status === 'draft' ? 'text-green-600' :
                       'text-gray-600'
                     }`}>
                       {previewBlog.status}
@@ -4070,7 +4070,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         setShowBlogPreview(false);
                         startEdit(previewBlog);
                       }}
-                      className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+                      className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center space-x-2"
                     >
                       <FaEdit className="h-4 w-4" />
                       <span>Edit</span>
@@ -4097,7 +4097,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
       return (
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading...</p>
           </div>
         </div>
@@ -4123,11 +4123,11 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
             </div>
             <DashboardStats />
             {/* AI Features Demo */}
-            <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 rounded-xl shadow-lg mb-8">
+            <div className="bg-gradient-to-r from-green-700 to-green-600 p-6 rounded-xl shadow-lg mb-8">
               <div className="flex items-center justify-between">
                 <div className="text-white">
                   <h3 className="text-xl font-bold mb-2">🤖 AI-Powered Laboratory Management</h3>
-                  <p className="text-purple-100 mb-4">Experience intelligent report analysis and automated insights</p>
+                  <p className="text-green-600 mb-4">Experience intelligent report analysis and automated insights</p>
                 </div>
                 <button
                   onClick={() => {
@@ -4147,7 +4147,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     });
                     setShowReportAnalyzer(true);
                   }}
-                  className="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center space-x-2"
+                  className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center space-x-2"
                 >
                   <FaBrain className="w-5 h-5" />
                   <span>Try AI Report Analysis</span>
@@ -4166,7 +4166,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         <p className="text-sm text-gray-600">{contact.email}</p>
                       </div>
                       <span className={`text-xs px-2 py-1 rounded-full ${
-                        contact.status === 'new' ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'
+                        contact.status === 'new' ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {contact.status}
                       </span>
@@ -4185,7 +4185,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         <p className="text-sm text-gray-600">{blog.category}</p>
                       </div>
                       <span className={`text-xs px-2 py-1 rounded-full ${
-                        blog.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                        blog.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {blog.status}
                       </span>
@@ -4243,7 +4243,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 shadow-lg">
+      <div className="bg-gradient-to-r from-green-600 via-green-700 to-green-700 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
@@ -4253,7 +4253,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                 </div>
                 <div>
                   <span className="font-bold text-white text-lg">GTFTL Admin</span>
-                  <p className="text-blue-100 text-xs">Management Panel</p>
+                  <p className="text-green-100 text-xs">Management Panel</p>
                 </div>
               </div>
             </div>
@@ -4261,13 +4261,13 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
               {adminUser && (
                 <div className="text-right">
                   <p className="text-sm text-white font-medium">{adminUser.username}</p>
-                  <p className="text-xs text-blue-200">{adminUser.email}</p>
-                  <p className="text-xs text-yellow-300 font-medium">{adminUser.role}</p>
+                  <p className="text-xs text-green-200">{adminUser.email}</p>
+                  <p className="text-xs text-green-300 font-medium">{adminUser.role}</p>
                 </div>
               )}
               <button
                 onClick={handleLogout}
-                className="flex items-center space-x-2 text-white hover:text-red-300 transition-colors duration-200 bg-white bg-opacity-10 px-4 py-2 rounded-lg hover:bg-opacity-20"
+                className="flex items-center space-x-2 text-white hover:text-green-300 transition-colors duration-200 bg-white bg-opacity-10 px-4 py-2 rounded-lg hover:bg-opacity-20"
               >
                 <FaSignOutAlt className="h-4 w-4" />
                 <span className="font-medium">Logout</span>
@@ -4289,8 +4289,8 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                       activeTab === tab.id
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md transform scale-105'
-                        : 'text-gray-600 hover:bg-blue-50 hover:text-blue-700'
+                        ? 'bg-gradient-to-r from-green-700 to-green-900 text-white shadow-md transform scale-105'
+                        : 'text-gray-600 hover:bg-blue-50 hover:text-green-700'
                     }`}
                   >
                     <tab.icon className="h-5 w-5" />

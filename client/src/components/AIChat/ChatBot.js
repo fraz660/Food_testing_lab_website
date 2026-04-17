@@ -45,24 +45,19 @@ const ChatBot = () => {
       keywords: ['test', 'testing', 'service', 'analysis', 'laboratory', 'lab'],
       response: `🔬 **Our Laboratory Testing Services:**
 
-**Chemical Analysis:**
-• Heavy Metal Detection (₹2,500/sample)
-• Pesticide Residue Analysis (₹4,500/sample)
-• Nutritional Analysis (₹3,200/sample)
+**1. Chemical Analysis:**
+• Nutritional Analysis & Proximate Profiling
+• Heavy Metal Detection
+• Pesticide Residue Analysis
 
-**Microbiological Testing:**
-• Pathogen Detection (₹1,800/parameter)
-• Shelf-life Studies
-• HACCP Support
+**2. Microbiological Testing:**
+• Pathogen Detection
+• Shelf-life Studies & Complete Water Analysis
 
-**Water Quality Testing:**
-• Complete water analysis (₹2,800/sample)
-• WHO & IS 10500 compliance
-
-**Specialized Tests:**
-• Aflatoxin Testing (₹2,200/sample)
-• Food Allergen Detection (₹1,500/allergen)
-• Pharmaceutical Testing (₹3,500/parameter)
+**3. Specialized Testing:**
+• Marine Product Testing
+• Pharmaceutical & Herbal Testing
+• Environmental Analysis (Soil/Air/Effluent)
 
 Would you like detailed information about any specific test?`
     },
@@ -81,45 +76,17 @@ Would you like detailed information about any specific test?`
 • Test requirements specification
 • Contact information for report delivery
 
-**Delivery Options:**
-• Drop-off at our laboratory (Mon-Fri: 9AM-6PM)
-• Home collection service available
-• Courier service for distant locations
-
-**Sample Requirements:**
-• Minimum sample size varies by test type
-• Fresh samples preferred for microbiological testing
-• Proper preservation for chemical analysis
-
 Need help with specific sample types or collection procedures?`
     },
     pricing: {
       keywords: ['price', 'cost', 'rate', 'charge', 'fee', 'payment'],
       response: `💰 **Pricing Information:**
 
-**Popular Tests:**
-• Heavy Metal Analysis: ₹2,500 per sample
-• Pesticide Residue: ₹4,500 per sample  
-• Microbiology Panel: ₹1,800 per parameter
-• Water Quality: ₹2,800 per sample
-• Nutritional Analysis: ₹3,200 per sample
+Test pricing varies depending on the specific parameters required, sample matrix complexity, and regulatory standards. 
 
-**Bulk Discounts:**
-• 10+ samples: 10% discount
-• 25+ samples: 15% discount
-• 50+ samples: 20% discount
+For an accurate quotation tailored to your requirements, please use the **Request Quote** button on our Services page or contact our laboratory directly. We also offer corporate discounts for bulk samples and long-term contracts.
 
-**Express Service:**
-• 50% surcharge for rush delivery
-• Results within 24-48 hours
-
-**Payment Options:**
-• Cash/Card at laboratory
-• Online payment portal
-• Bank transfer
-• Corporate credit facilities
-
-Contact us for custom pricing on large projects!`
+Contact us for a custom quote!`
     },
     contact: {
       keywords: ['contact', 'phone', 'email', 'address', 'support'],
@@ -127,25 +94,19 @@ Contact us for custom pricing on large projects!`
 
 **Laboratory Address:**
 Gram Tarang Food Testing Laboratory
-Plot No. 123, Industrial Area
-Bhubaneswar, Odisha 751024
+Plot No.1, IDCO Industrial Estate,
+Main Road, Paralakhemundi,
+Gajapati, Odisha – 751200
 
 **Contact Details:**
-📱 Phone: +91-XXX-XXX-XXXX
-📧 Email: info@gramtarangfoodtesting.com
-🌐 Website: www.gramtarangfoodtesting.com
+📱 Phone: +91 94387 32495
+📧 Email: info@ftl.org.in
+🌐 Website: www.ftl.org.in
 
 **Business Hours:**
 Monday - Friday: 9:00 AM - 6:00 PM
-Saturday: 9:00 AM - 2:00 PM
+Saturday: 9:00 AM - 1:00 PM
 Sunday: Closed
-
-**Emergency Contact:**
-🚨 Emergency Hotline: +91-XXX-XXX-XXXX
-📧 Urgent: emergency@gramtarangfoodtesting.com
-
-**Follow Us:**
-🔗 LinkedIn | Facebook | Twitter
 
 Our customer support team is ready to help you!`
     },
@@ -342,7 +303,7 @@ Could you please rephrase your question or choose from the quick action buttons 
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-gradient-to-r from-green-500 to-blue-600 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+          className="bg-gradient-to-r bg-green-600 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         >
           {isOpen ? <FaTimes className="w-7 h-7" /> : <FaRobot className="w-7 h-7" />}
         </button>
@@ -359,7 +320,7 @@ Could you please rephrase your question or choose from the quick action buttons 
             className="fixed bottom-24 right-3 md:right-6 w-[95vw] md:w-[420px] h-[70vh] md:h-[600px] max-w-[420px] bg-white rounded-lg shadow-2xl z-40 flex flex-col overflow-hidden border border-gray-200"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-green-500 to-blue-600 text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r bg-green-600 text-white p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                   <FaRobot className="w-4 h-4" />
@@ -388,7 +349,7 @@ Could you please rephrase your question or choose from the quick action buttons 
                 >
                   <div className={`max-w-sm lg:max-w-lg px-4 py-3 rounded-lg ${
                     message.sender === 'user'
-                      ? 'bg-blue-500 text-white'
+                      ? 'bg-green-500 text-white'
                       : 'bg-white text-gray-800 shadow-md border'
                   }`}>
                     {message.sender === 'bot' && (
@@ -467,7 +428,7 @@ Could you please rephrase your question or choose from the quick action buttons 
                 disabled={isListening}
                 className={`p-2 rounded-lg transition-colors ${
                   isListening 
-                    ? 'bg-red-500 text-white' 
+                    ? 'bg-green-500 text-white' 
                     : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                 }`}
               >

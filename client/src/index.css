@@ -10,6 +10,23 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Brand-colored text selection */
+::selection {
+  background-color: rgba(22, 163, 74, 0.2);
+  color: #14532d;
+}
+
+/* Accessibility: visible focus rings */
+:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -75,7 +92,7 @@ code {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #a855f7 0%, #eab308 100%); /* Purple to Yellow */
+  background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -103,12 +120,12 @@ code {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #a855f7; /* Purple */
+  background: #15803d;
   border-radius: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #eab308; /* Yellow */
+  background: #166534;
 }
 
 /* Image Slider Progress Bar Animation */

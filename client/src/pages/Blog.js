@@ -124,9 +124,9 @@ const Blog = () => {
   if (slug && currentBlog) {
     // Single blog post view
     return (
-      <div className="min-h-screen pt-16">
+      <div className="min-h-screen pt-20 lg:pt-24">
         {/* Blog Header */}
-        <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+        <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -144,11 +144,11 @@ const Blog = () => {
                 {currentBlog.title}
               </h1>
               
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 {currentBlog.excerpt}
               </p>
               
-              <div className="flex justify-center items-center space-x-6 text-blue-200">
+              <div className="flex justify-center items-center space-x-6 text-green-200">
                 <div className="flex items-center space-x-2">
                   <FaUser className="h-4 w-4" />
                   <span>{currentBlog.author?.username}</span>
@@ -207,7 +207,7 @@ const Blog = () => {
                   {currentBlog.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+                      className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800"
                     >
                       <FaTag className="h-3 w-3 mr-1" />
                       {tag}
@@ -226,7 +226,7 @@ const Blog = () => {
             >
               <Link
                 to="/blog"
-                className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium"
+                className="inline-flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium"
               >
                 <span>← Back to All Posts</span>
               </Link>
@@ -239,9 +239,9 @@ const Blog = () => {
 
   // Blog listing view
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20 lg:pt-24">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section ref={heroRef} className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -250,9 +250,9 @@ const Blog = () => {
             className="text-center space-y-8"
           >
             <h1 className="text-5xl md:text-6xl font-bold">
-              Our <span className="text-blue-200">Blog</span>
+              Our <span className="text-green-200">Blog</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Stay updated with the latest insights, research, and developments in food testing and laboratory technology
             </p>
           </motion.div>
@@ -296,7 +296,7 @@ const Blog = () => {
                   
                   <div className="p-6">
                     <div className="flex items-center space-x-4 mb-4 text-sm text-gray-500">
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
                         {blog.category}
                       </span>
                       <div className="flex items-center space-x-1">
@@ -327,7 +327,7 @@ const Blog = () => {
                       
                       <Link
                         to={`/blog/${blog.slug}`}
-                        className="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-1"
+                        className="text-green-600 hover:text-green-700 font-medium flex items-center space-x-1"
                       >
                         <span>Read More</span>
                         <FaArrowRight className="h-3 w-3" />
@@ -354,7 +354,7 @@ const Blog = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Search articles..."
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
             </form>
@@ -370,8 +370,8 @@ const Blog = () => {
                   }}
                   className={`px-4 py-2 rounded-full font-medium transition-colors duration-200 ${
                     selectedCategory === category.id
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-600'
+                      ? 'bg-green-600 text-white'
+                      : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-green-600'
                   }`}
                 >
                   {category.name}
@@ -388,7 +388,7 @@ const Blog = () => {
           {loading ? (
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
-                <FaSpinner className="animate-spin h-12 w-12 text-blue-600 mx-auto mb-4" />
+                <FaSpinner className="animate-spin h-12 w-12 text-green-600 mx-auto mb-4" />
                 <p className="text-gray-600">Loading articles...</p>
               </div>
             </div>
@@ -420,7 +420,7 @@ const Blog = () => {
                     
                     <div className="p-6">
                       <div className="flex items-center space-x-4 mb-4 text-sm text-gray-500">
-                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
                           {blog.category}
                         </span>
                         <div className="flex items-center space-x-1">
@@ -451,7 +451,7 @@ const Blog = () => {
                         
                         <Link
                           to={`/blog/${blog.slug}`}
-                          className="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-1"
+                          className="text-green-600 hover:text-green-700 font-medium flex items-center space-x-1"
                         >
                           <span>Read More</span>
                           <FaArrowRight className="h-3 w-3" />
@@ -470,7 +470,7 @@ const Blog = () => {
                     disabled={!pagination.hasPrev}
                     className={`px-4 py-2 rounded-lg font-medium ${
                       pagination.hasPrev
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-green-600 text-white hover:bg-green-700'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                   >
@@ -486,7 +486,7 @@ const Blog = () => {
                     disabled={!pagination.hasNext}
                     className={`px-4 py-2 rounded-lg font-medium ${
                       pagination.hasNext
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-green-600 text-white hover:bg-green-700'
                         : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     }`}
                   >
@@ -504,7 +504,7 @@ const Blog = () => {
                   setSelectedCategory('all');
                   setCurrentPage(1);
                 }}
-                className="mt-4 text-blue-600 hover:text-blue-700 font-medium"
+                className="mt-4 text-green-600 hover:text-green-700 font-medium"
               >
                 Clear filters
               </button>

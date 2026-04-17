@@ -57,12 +57,10 @@ const StaticPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20 lg:pt-24">
         <div className="text-center">
-          <FaSpinner className="w-8 h-8 text-blue-600 animate-spin mx-auto mb-4" />
+          <FaSpinner className="w-8 h-8 text-green-600 animate-spin mx-auto mb-4" />
           <p className="text-gray-600">Loading page...</p>
-          <p className="text-sm text-gray-500 mt-2">Debug: slug = {slug}</p>
-          <p className="text-sm text-gray-500">Path = {window.location.pathname}</p>
         </div>
       </div>
     );
@@ -70,24 +68,16 @@ const StaticPage = () => {
 
   if (error || (!loading && !page)) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20 lg:pt-24">
         <div className="text-center max-w-md mx-auto px-6">
-          <FaExclamationTriangle className="w-16 h-16 text-red-500 mx-auto mb-6" />
+          <FaExclamationTriangle className="w-16 h-16 text-green-500 mx-auto mb-6" />
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Page Not Found</h1>
           <p className="text-gray-600 mb-6">
-            {error || 'The page you are looking for does not exist.'}
+            The page you are looking for does not exist or is currently unavailable.
           </p>
-          <div className="bg-gray-100 p-4 rounded mb-4 text-sm">
-            <p><strong>Debug Info:</strong></p>
-            <p>Slug: {slug}</p>
-            <p>Path: {window.location.pathname}</p>
-            <p>Error: {error}</p>
-            <p>Page loaded: {page ? 'Yes' : 'No'}</p>
-            <p>Loading: {loading ? 'Yes' : 'No'}</p>
-          </div>
           <a
             href="/"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
           >
             Go Home
           </a>
@@ -99,7 +89,7 @@ const StaticPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-16">
+      <div className="bg-green-700 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +101,7 @@ const StaticPage = () => {
               {page.title}
             </h1>
             {page.metaDescription && (
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 {page.metaDescription}
               </p>
             )}
@@ -220,7 +210,7 @@ const StaticPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 bg-gradient-to-r from-green-500 to-blue-600 rounded-xl p-8 text-white text-center"
+            className="mt-8 bg-gradient-to-r bg-green-600 rounded-xl p-8 text-white text-center"
           >
             <h3 className="text-2xl font-bold mb-4">Need More Information?</h3>
             <p className="text-green-100 mb-6 max-w-2xl mx-auto">

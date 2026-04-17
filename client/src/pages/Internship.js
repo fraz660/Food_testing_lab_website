@@ -36,9 +36,9 @@ const Internship = () => {
   const programs = [
     {
       duration: '15 days',
-      price: 'Coming Soon',
+      price: '₹15,000',
       description: 'Any one instrument/facility training',
-      color: 'bg-blue-500',
+      color: 'bg-green-500',
       popular: false,
       features: [
         'Hands-on training on selected instrument',
@@ -49,7 +49,7 @@ const Internship = () => {
     },
     {
       duration: '1 Month',
-      price: 'Coming Soon',
+      price: '₹25,000',
       description: 'Comprehensive introduction to multiple techniques',
       color: 'bg-green-500',
       popular: true,
@@ -63,9 +63,9 @@ const Internship = () => {
     },
     {
       duration: '3 Months',
-      price: 'Coming Soon',
+      price: '₹40,000',
       description: 'Advanced training and research project',
-      color: 'bg-purple-500',
+      color: 'bg-green-600',
       popular: false,
       features: [
         'All laboratory facilities access',
@@ -78,9 +78,9 @@ const Internship = () => {
     },
     {
       duration: '6 Months',
-      price: 'Coming Soon',
+      price: '₹70,000',
       description: 'Complete professional development program',
-      color: 'bg-orange-500',
+      color: 'bg-green-500',
       popular: false,
       features: [
         'Full access to all facilities',
@@ -95,40 +95,28 @@ const Internship = () => {
 
   const trainingAreas = [
     {
+      icon: FaGraduationCap,
+      title: 'Internship Programs',
+      description: 'Comprehensive internship modules for students and researchers to gain hands-on laboratory experience and multi-disciplinary analytical skills.',
+      techniques: ['15 Days Training', '1 Month Program', '3 Months Research', '6 Months Project']
+    },
+    {
       icon: FaFlask,
-      title: 'Food Testing',
-      description: 'Learn comprehensive food analysis techniques including proximate composition, contaminant detection, and quality assessment.',
-      techniques: ['Proximate Analysis', 'Pesticide Testing', 'Heavy Metal Analysis', 'Nutritional Labeling']
+      title: 'Instrument Training',
+      description: 'Specialized hands-on operation and application training on high-end analytical equipment.',
+      techniques: ['GC-MS/MS', 'LC-MS/MS', 'ICP-MS', 'HPLC']
+    },
+    {
+      icon: FaUsers,
+      title: 'Industrial Training',
+      description: 'Practical industry-oriented exposure mapping academic knowledge to industry protocols, GLP, and QA/QC standards.',
+      techniques: ['GLP Protocols', 'Method Validation', 'Quality Assurance', 'Industry Compliance']
     },
     {
       icon: FaCertificate,
-      title: 'Pharmaceutical Analysis',
-      description: 'Master pharmaceutical testing methods including drug purity, stability studies, and quality control procedures.',
-      techniques: ['Drug Purity', 'Stability Studies', 'Impurity Profiling', 'Method Validation']
-    },
-    {
-      icon: FaMicroscope,
-      title: 'Microbiology',
-      description: 'Gain expertise in microbiological testing, pathogen detection, and sterile techniques.',
-      techniques: ['Pathogen Detection', 'Culture Techniques', 'Identification Methods', 'Biosafety Protocols']
-    },
-    {
-      icon: FaFlask,
-      title: 'Molecular Techniques',
-      description: 'Advanced molecular biology techniques including DNA/RNA analysis and protein studies.',
-      techniques: ['PCR Techniques', 'Gel Electrophoresis', 'Protein Analysis', 'Gene Expression']
-    },
-    {
-      icon: FaMicroscope,
-      title: 'Animal Cell Culture',
-      description: 'Learn mammalian cell culture, cancer cell lines, and various cell-based assays.',
-      techniques: ['Cell Maintenance', 'Cytotoxicity Assays', 'Cell Viability', 'Protein Expression']
-    },
-    {
-      icon: FaFlask,
-      title: 'In Silico Analysis',
-      description: 'Computational biology, bioinformatics, and molecular modeling techniques.',
-      techniques: ['Molecular Docking', 'Bioinformatics', 'Data Mining', 'Statistical Analysis']
+      title: 'Certification Programs',
+      description: 'Structured short-term courses ending with recognized certifications to enhance your professional credentials in analytical fields.',
+      techniques: ['Food & Water Safety', 'Analytical Chemistry', 'Microbiological Testing', 'Pharma Analysis']
     }
   ];
 
@@ -198,9 +186,9 @@ const Internship = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20 lg:pt-24">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -209,9 +197,9 @@ const Internship = () => {
             className="text-center space-y-4 md:space-y-8"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-              Internship <span className="text-blue-200">Programs</span>
+              Internship <span className="text-green-200">Programs</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed px-2">
               Gain hands-on experience in analytical testing with state-of-the-art instruments and expert guidance
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
@@ -220,11 +208,11 @@ const Internship = () => {
                 <span className="text-sm font-medium">Skill Development</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaCertificate className="h-6 w-6 text-yellow-400" />
+                <FaCertificate className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Certified Training</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaUsers className="h-6 w-6 text-blue-400" />
+                <FaUsers className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Expert Mentorship</span>
               </div>
             </div>
@@ -281,8 +269,8 @@ const Internship = () => {
                 viewport={{ once: true }}
                 className="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="h-8 w-8 text-blue-600" />
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <feature.icon className="h-8 w-8 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.description}</p>
@@ -321,8 +309,8 @@ const Internship = () => {
                 className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-3 bg-blue-100 rounded-full">
-                    <area.icon className="h-8 w-8 text-blue-600" />
+                  <div className="p-3 bg-green-100 rounded-full">
+                    <area.icon className="h-8 w-8 text-green-600" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">{area.title}</h3>
                 </div>
@@ -335,7 +323,7 @@ const Internship = () => {
                     {area.techniques.map((technique, techIndex) => (
                       <span 
                         key={techIndex}
-                        className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-blue-50 text-green-700 rounded-full text-sm font-medium"
                       >
                         {technique}
                       </span>
@@ -373,11 +361,11 @@ const Internship = () => {
                 animate={programsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className={`relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 ${
-                  program.popular ? 'ring-2 ring-blue-500 scale-105' : ''
+                  program.popular ? 'ring-2 ring-green-500 scale-105' : ''
                 }`}
               >
                 {program.popular && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-b-lg text-sm font-medium">
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-b-lg text-sm font-medium">
                     Most Popular
                   </div>
                 )}
@@ -465,7 +453,7 @@ const Internship = () => {
                 <div className="grid grid-cols-2 gap-2">
                   {eligibleFields.map((field, index) => (
                     <div key={index} className="flex items-center space-x-2 p-3 bg-white rounded-lg">
-                      <FaGraduationCap className="h-4 w-4 text-blue-600" />
+                      <FaGraduationCap className="h-4 w-4 text-green-600" />
                       <span className="text-gray-700 text-sm">{field}</span>
                     </div>
                   ))}
@@ -511,7 +499,7 @@ const Internship = () => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -526,7 +514,7 @@ const Internship = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -541,7 +529,7 @@ const Internship = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                     placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
@@ -554,7 +542,7 @@ const Internship = () => {
                     name="education"
                     value={formData.education}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                   >
                     <option value="">Select education level</option>
                     <option value="B.Sc.">B.Sc. (Bachelor of Science)</option>
@@ -572,7 +560,7 @@ const Internship = () => {
                     name="field"
                     value={formData.field}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                   >
                     <option value="">Select your field</option>
                     {eligibleFields.map((field, index) => (
@@ -590,7 +578,7 @@ const Internship = () => {
                     name="duration"
                     value={formData.duration}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                   >
                     <option value="">Select duration</option>
                     <option value="15 days">15 days (₹15,000)</option>
@@ -610,7 +598,7 @@ const Internship = () => {
                   value={formData.experience}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                   placeholder="Describe any previous laboratory or research experience..."
                 />
               </div>
@@ -625,7 +613,7 @@ const Internship = () => {
                   onChange={handleInputChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
                   placeholder="Why do you want to join our internship program? What do you hope to learn and achieve?"
                 />
               </div>
@@ -634,11 +622,11 @@ const Internship = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Resume/CV Upload
                 </label>
-                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-blue-400 transition-colors duration-200">
+                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-green-400 transition-colors duration-200">
                   <div className="space-y-1 text-center">
                     <FaUpload className="mx-auto h-12 w-12 text-gray-400" />
                     <div className="flex text-sm text-gray-600">
-                      <label className="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                      <label className="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
                         <span>Upload a file</span>
                         <input
                           type="file"
@@ -664,7 +652,7 @@ const Internship = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 ${
+                  className={`bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105 ${
                     loading ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
                 >
@@ -737,8 +725,8 @@ const Internship = () => {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <p className="text-sm text-blue-800">
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-green-200">
+                <p className="text-sm text-green-800">
                   <strong>Note:</strong> Please include your full name and program duration in the transaction reference. 
                   Send payment confirmation to our email after transfer.
                 </p>
@@ -776,7 +764,7 @@ const Internship = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -788,19 +776,19 @@ const Internship = () => {
             <h2 className="text-4xl font-bold">
               Have Questions?
             </h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-green-100 max-w-3xl mx-auto">
               Contact us for more information about our internship programs and application process
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
+                className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
               >
                 Contact Us
               </a>
               <a
                 href="mailto:info@gtftl.com"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
               >
                 Email Us
               </a>

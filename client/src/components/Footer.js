@@ -15,7 +15,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-purple-900 text-white">
+    <footer className="bg-green-900 text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -33,11 +33,11 @@ const Footer = () => {
                 <p className="text-sm text-gray-400">Food Testing Lab</p>
               </div>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Gram Tarang Food Testing Lab, a Social Entrepreneurial Outreach of Centurion UniversityEstablished in 2022 as a NABL-accredited analytical testing laboratory. It serves as both a commercial testing facility and a skill development hub for students, researchers, and industry professionals.
+             <p className="text-gray-300 text-sm leading-relaxed">
+              Gram Tarang Food Testing Lab, a Social Entrepreneurial Outreach of Centurion University. Established in 2022 as a NABL-accredited analytical testing laboratory. It serves as both a commercial testing facility and a skill development hub for students, researchers, and industry professionals.
             </p>
             <div className="flex items-center space-x-2 text-sm text-gray-300">
-              <FaCertificate className="h-4 w-4 text-yellow-400" />
+              <FaCertificate className="h-4 w-4 text-green-400" />
               <span>NABL Accredited</span>
             </div>
           </div>
@@ -58,7 +58,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link 
                     to={link.path} 
-                    className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-sm"
                   >
                     {link.label}
                   </Link>
@@ -87,7 +87,7 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3 text-sm">
-                <FaMapMarkerAlt className="h-4 w-4 text-yellow-400 mt-1 flex-shrink-0" />
+                <FaMapMarkerAlt className="h-4 w-4 text-green-400 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
                   <p>Plot No.1, IDCO Industrial Estate,</p>
                   <p>Main Road, Paralakhemundi,</p>
@@ -96,17 +96,17 @@ const Footer = () => {
               </div>
               
               <div className="flex items-center space-x-3 text-sm">
-                <FaPhone className="h-4 w-4 text-yellow-400" />
+                <FaPhone className="h-4 w-4 text-green-400" />
                 <span className="text-gray-300">+91 94387 32495</span>
               </div>
               
               <div className="flex items-center space-x-3 text-sm">
-                <FaEnvelope className="h-4 w-4 text-yellow-400" />
+                <FaEnvelope className="h-4 w-4 text-green-400" />
                 <span className="text-gray-300">info@ftl.org.in </span>
               </div>
               
               <div className="flex items-start space-x-3 text-sm">
-                <FaClock className="h-4 w-4 text-yellow-400 mt-1" />
+                <FaClock className="h-4 w-4 text-green-400 mt-1" />
                 <div className="text-gray-300">
                   <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
                   <p>Sat: 9:00 AM - 1:00 PM</p>
@@ -118,16 +118,16 @@ const Footer = () => {
             <div className="mt-6">
               <h5 className="font-medium mb-3">Follow Us</h5>
               <div className="flex space-x-3">
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                   <FaFacebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                   <FaTwitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                   <FaLinkedin className="h-5 w-5" />
                 </a>
-                <a href="https://www.instagram.com/foodtestinglaboratory_?igsh=djVrdmIwMzRnenFo" className="text-gray-400 hover:text-yellow-400 transition-colors duration-200">
+                <a href="https://www.instagram.com/foodtestinglaboratory_?igsh=djVrdmIwMzRnenFo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors duration-200">
                   <FaInstagram className="h-5 w-5" />
                 </a>
               </div>
@@ -141,7 +141,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
             <div className="mb-2 md:mb-0">
-              <p>&copy; 2024 Gram Tarang Food Testing Lab. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Gram Tarang Food Testing Lab. All rights reserved.</p>
             </div>
             <div className="flex space-x-6">
               <Link to="/privacy-policy" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>

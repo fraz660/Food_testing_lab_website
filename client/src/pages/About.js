@@ -25,7 +25,7 @@ const About = () => {
       icon: FaCertificate,
       title: 'Quality Excellence',
       description: 'We maintain the highest standards in all our testing procedures and follow strict quality control measures.',
-      color: 'bg-blue-500'
+      color: 'bg-green-500'
     },
     {
       icon: FaUsers,
@@ -37,25 +37,25 @@ const About = () => {
       icon: FaRocket,
       title: 'Innovation',
       description: 'We continuously adopt cutting-edge technologies and methodologies to improve our testing capabilities.',
-      color: 'bg-purple-500'
+      color: 'bg-green-600'
     },
     {
       icon: FaGraduationCap,
       title: 'Knowledge Sharing',
       description: 'We believe in educating and training the next generation of scientists and researchers.',
-      color: 'bg-orange-500'
+      color: 'bg-green-500'
     },
     {
       icon: FaHandshake,
       title: 'Collaborative Approach',
       description: 'We work closely with our clients to understand their needs and provide tailored solutions.',
-      color: 'bg-red-500'
+      color: 'bg-green-500'
     },
     {
       icon: FaAward,
       title: 'Continuous Improvement',
       description: 'We strive for excellence by continuously improving our processes and expanding our capabilities.',
-      color: 'bg-indigo-500'
+      color: 'bg-green-500'
     }
   ];
 
@@ -69,9 +69,9 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20 lg:pt-24">
       {/* Hero Section */}
-      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section ref={heroRef} className="py-12 md:py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -80,9 +80,9 @@ const About = () => {
             className="text-center space-y-4 md:space-y-8"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-              About <span className="text-blue-200">GTFTL</span>
+              About <span className="text-green-200">GTFTL</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed px-2">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed px-2">
               Leading the way in analytical testing and scientific education since 2022
             </p>
           </motion.div>
@@ -116,8 +116,8 @@ const About = () => {
               
               <div className="grid grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">
                 <div className="text-center p-3 md:p-4 bg-blue-50 rounded-lg">
-                  <FaFlask className="h-8 w-8 md:h-10 md:w-10 text-blue-600 mx-auto mb-2" />
-                  <div className="text-xl md:text-2xl font-bold text-blue-600">8+</div>
+                  <FaFlask className="h-8 w-8 md:h-10 md:w-10 text-green-600 mx-auto mb-2" />
+                  <div className="text-xl md:text-2xl font-bold text-green-600">8+</div>
                   <div className="text-xs md:text-sm text-gray-600">Testing Categories</div>
                 </div>
                 <div className="text-center p-3 md:p-4 bg-green-50 rounded-lg">
@@ -183,8 +183,8 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-center p-4 md:p-8 bg-white rounded-2xl shadow-lg"
             >
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
-                <FaBullseye className="h-6 w-6 md:h-8 md:w-8 text-blue-600" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <FaBullseye className="h-6 w-6 md:h-8 md:w-8 text-green-600" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Mission</h3>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed">
@@ -216,8 +216,8 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-center p-8 bg-white rounded-2xl shadow-lg"
             >
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FaAward className="h-8 w-8 text-purple-600" />
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FaAward className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Excellence</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -286,7 +286,7 @@ const About = () => {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 hidden md:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-green-200 hidden md:block"></div>
             
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
@@ -300,14 +300,14 @@ const About = () => {
                 >
                   <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                     <div className="bg-white p-6 rounded-lg shadow-lg">
-                      <div className="text-2xl font-bold text-blue-600 mb-2">{milestone.year}</div>
+                      <div className="text-2xl font-bold text-green-600 mb-2">{milestone.year}</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{milestone.event}</h3>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>
                   
                   {/* Timeline Dot */}
-                  <div className="hidden md:block w-4 h-4 bg-blue-600 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
+                  <div className="hidden md:block w-4 h-4 bg-green-600 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
                   
                   <div className="w-full md:w-1/2"></div>
                 </motion.div>
@@ -318,7 +318,7 @@ const About = () => {
       </section>
 
       {/* Partnership Section */}
-      <section ref={partnershipsRef} className="py-20 bg-blue-600 text-white">
+      <section ref={partnershipsRef} className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -327,7 +327,7 @@ const About = () => {
             className="text-center"
           >
             <h2 className="text-4xl font-bold mb-6">Partnership with CUTM</h2>
-            <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed mb-12">
               Our collaboration with Centurion University of Technology and Management strengthens our mission 
               by providing opportunities for skill development, research, and hands-on training for students and professionals.
             </p>
@@ -339,9 +339,9 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-center"
               >
-                <FaGraduationCap className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
+                <FaGraduationCap className="h-16 w-16 text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Academic Integration</h3>
-                <p className="text-blue-100">
+                <p className="text-green-100">
                   Integrated into CUTM's food processing program for comprehensive education
                 </p>
               </motion.div>
@@ -354,7 +354,7 @@ const About = () => {
               >
                 <FaUsers className="h-16 w-16 text-green-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Skill Development</h3>
-                <p className="text-blue-100">
+                <p className="text-green-100">
                   Practical training in food processing, preservation, and analytical techniques
                 </p>
               </motion.div>
@@ -365,9 +365,9 @@ const About = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-center"
               >
-                <FaHandshake className="h-16 w-16 text-purple-400 mx-auto mb-4" />
+                <FaHandshake className="h-16 w-16 text-green-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Industry Collaboration</h3>
-                <p className="text-blue-100">
+                <p className="text-green-100">
                   Bridge between academic learning and real-world industry applications
                 </p>
               </motion.div>

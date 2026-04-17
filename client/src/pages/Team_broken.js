@@ -227,9 +227,9 @@ const Team = () => {
   // Helper function to get background color based on department
   const getDepartmentColor = (department, index) => {
     const colors = {
-      'Management': ['bg-blue-500', 'bg-green-500', 'bg-purple-500'],
-      'Chemical': ['bg-cyan-500', 'bg-indigo-500', 'bg-pink-500', 'bg-teal-500'],
-      'Biological': ['bg-emerald-500', 'bg-orange-500', 'bg-lime-500'],
+      'Management': ['bg-green-500', 'bg-green-500', 'bg-green-600'],
+      'Chemical': ['bg-green-500', 'bg-green-500', 'bg-green-500', 'bg-green-500'],
+      'Biological': ['bg-emerald-500', 'bg-green-500', 'bg-lime-500'],
       'Research': ['bg-violet-500'],
       'Administration': ['bg-gray-500']
     };
@@ -243,7 +243,7 @@ const Team = () => {
     return (
       <div className="min-h-screen pt-16 flex items-center justify-center">
         <div className="text-center">
-          <FaSpinner className="h-12 w-12 animate-spin text-blue-600 mx-auto mb-4" />
+          <FaSpinner className="h-12 w-12 animate-spin text-green-600 mx-auto mb-4" />
           <p className="text-lg text-gray-600">Loading team information...</p>
         </div>
       </div>
@@ -255,10 +255,10 @@ const Team = () => {
     return (
       <div className="min-h-screen pt-16 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-lg text-red-600 mb-4">{error}</p>
+          <p className="text-lg text-green-600 mb-4">{error}</p>
           <button 
             onClick={() => window.location.reload()} 
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
           >
             Retry
           </button>
@@ -282,11 +282,11 @@ const Team = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900">Our Team</h1>
           <p className="text-xl text-gray-600 mt-4">Loading team information...</p>
-          <div className="mt-8 p-4 bg-red-100 rounded">
-            <p className="text-red-800">Debug: Emergency render mode</p>
+          <div className="mt-8 p-4 bg-green-100 rounded">
+            <p className="text-green-800">Debug: Emergency render mode</p>
             <button 
               onClick={() => window.location.reload()} 
-              className="mt-2 px-4 py-2 bg-red-600 text-white rounded"
+              className="mt-2 px-4 py-2 bg-green-600 text-white rounded"
             >
               Reload Page
             </button>
@@ -299,12 +299,12 @@ const Team = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Debug indicator */}
-      <div className="fixed top-20 right-4 bg-red-500 text-white p-2 text-xs z-50">
+      <div className="fixed top-20 right-4 bg-green-500 text-white p-2 text-xs z-50">
         Team: {teamMembers.length} | Board: {boardMembers.length} | Loading: {loading.toString()}
       </div>
       
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section ref={heroRef} className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -313,9 +313,9 @@ const Team = () => {
             className="text-center space-y-8"
           >
             <h1 className="text-5xl md:text-6xl font-bold">
-              Our <span className="text-blue-200">Team</span>
+              Our <span className="text-green-200">Team</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Meet our dedicated team of experts committed to delivering excellence in analytical testing
             </p>
             <div className="flex justify-center items-center space-x-8">
@@ -324,7 +324,7 @@ const Team = () => {
                 <span className="text-sm font-medium">Highly Qualified</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaFlask className="h-6 w-6 text-yellow-400" />
+                <FaFlask className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Expert Analysts</span>
               </div>
             </div>
@@ -353,7 +353,7 @@ const Team = () => {
               <div className="lg:col-span-2 space-y-6">
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-2">From the Managing Director's Desk</h2>
-                  <p className="text-blue-600 font-semibold">Dr. Preetha Bhadra, Managing Director</p>
+                  <p className="text-green-600 font-semibold">Dr. Preetha Bhadra, Managing Director</p>
                 </div>
                 <blockquote className="text-lg text-gray-600 leading-relaxed italic">
                   "It gives me immense pleasure to welcome you to Gram Tarang Food Testing Laboratory (FTL). 
@@ -445,7 +445,7 @@ const Team = () => {
                   <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
 
                   {member.email && (
-                    <div className="flex items-center space-x-2 text-sm text-blue-600">
+                    <div className="flex items-center space-x-2 text-sm text-green-600">
                       <FaEnvelope />
                       <a href={`mailto:${member.email}`} className="hover:underline">
                         {member.email}
@@ -477,7 +477,7 @@ const Team = () => {
             {teamMembers.length > 0 && (
               <div className="mt-6 flex justify-center items-center space-x-8">
                 <div className="flex items-center space-x-2">
-                  <FaFlask className="h-5 w-5 text-blue-500" />
+                  <FaFlask className="h-5 w-5 text-green-500" />
                   <span className="text-sm font-medium text-gray-600">{teamMembers.length} Expert Analysts</span>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -490,8 +490,8 @@ const Team = () => {
 
           {teamMembers.length === 0 && loading ? (
             <div className="text-center py-12">
-              <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-blue-500 bg-white transition ease-in-out duration-150">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-green-500 bg-white transition ease-in-out duration-150">
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
@@ -508,7 +508,7 @@ const Team = () => {
                 <p>Board Members: {boardMembers.length}, Team Members: {teamMembers.length}</p>
                 <button 
                   onClick={() => window.location.reload()} 
-                  className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                 >
                   Refresh Page
                 </button>
@@ -531,15 +531,15 @@ const Team = () => {
                       animate={teamInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.6, delay: 0.2 }}
                       className={`text-center p-6 rounded-xl ${
-                        dept === 'Chemical' ? 'bg-blue-50 border border-blue-200' :
+                        dept === 'Chemical' ? 'bg-blue-50 border border-green-200' :
                         dept === 'Biological' ? 'bg-green-50 border border-green-200' :
-                        'bg-purple-50 border border-purple-200'
+                        'bg-green-600 border border-green-200'
                       }`}
                     >
                       <div className={`w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center ${
-                        dept === 'Chemical' ? 'bg-blue-500 text-white' :
+                        dept === 'Chemical' ? 'bg-green-500 text-white' :
                         dept === 'Biological' ? 'bg-green-500 text-white' :
-                        'bg-purple-500 text-white'
+                        'bg-green-600 text-white'
                       }`}>
                         {dept === 'Chemical' ? <FaFlask className="h-6 w-6" /> :
                          dept === 'Biological' ? <FaMicroscope className="h-6 w-6" /> :
@@ -560,7 +560,7 @@ const Team = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 animate={teamInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200"
               >
                 <div className="flex items-start space-x-6">
                   {/* Profile Image */}
@@ -581,12 +581,12 @@ const Team = () => {
                   <div className="flex-1 space-y-4">
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                      <p className="text-blue-600 font-semibold mb-1">{member.position}</p>
+                      <p className="text-green-600 font-semibold mb-1">{member.position}</p>
                       <div className="flex items-center space-x-2">
                         <span className={`inline-block px-2 py-1 text-xs rounded-full font-medium ${
-                          member.department === 'Chemical' ? 'bg-blue-100 text-blue-800' :
+                          member.department === 'Chemical' ? 'bg-green-100 text-green-800' :
                           member.department === 'Biological' ? 'bg-green-100 text-green-800' :
-                          member.department === 'Research' ? 'bg-purple-100 text-purple-800' :
+                          member.department === 'Research' ? 'bg-green-100 text-green-800' :
                           'bg-gray-100 text-gray-800'
                         }`}>
                           {member.department} Department
@@ -623,7 +623,7 @@ const Team = () => {
                     {/* Contact Information */}
                     <div className="flex items-center space-x-4 text-sm">
                       {member.email && (
-                        <a href={`mailto:${member.email}`} className="flex items-center space-x-1 text-blue-600 hover:underline">
+                        <a href={`mailto:${member.email}`} className="flex items-center space-x-1 text-green-600 hover:underline">
                           <FaEnvelope className="h-3 w-3" />
                           <span>Email</span>
                         </a>
@@ -673,7 +673,7 @@ const Team = () => {
       </section>
 
       {/* Team Values */}
-      <section className="py-20 bg-blue-600 text-white">
+      <section className="py-20 bg-green-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -683,7 +683,7 @@ const Team = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-6">Our Team Values</h2>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-green-100 max-w-3xl mx-auto">
               The principles that guide our professional conduct and service delivery
             </p>
           </motion.div>
@@ -719,11 +719,11 @@ const Team = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 text-yellow-400">
+                <div className="w-16 h-16 mx-auto mb-4 text-green-400">
                   <value.icon className="h-16 w-16" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-blue-100 leading-relaxed">{value.description}</p>
+                <p className="text-green-100 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -750,13 +750,13 @@ const Team = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/internship"
-                className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105"
               >
                 Internship Programs
               </a>
               <a
                 href="/contact"
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-105"
               >
                 Contact HR
               </a>

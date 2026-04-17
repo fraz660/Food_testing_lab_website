@@ -40,12 +40,12 @@ const ImageSlider = ({ images, interval = 5000 }) => {
 
   return (
     <div 
-      className="relative w-full h-full overflow-hidden group bg-gradient-to-br from-purple-900 to-purple-800"
+      className="relative w-full h-full overflow-hidden group bg-gradient-to-br from-green-900 to-green-800"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Fallback Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-700 via-green-800 to-green-700"></div>
       
       {/* Image Container with Absolute Positioning */}
       {images.map((image, index) => (
@@ -75,7 +75,7 @@ const ImageSlider = ({ images, interval = 5000 }) => {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400"
         aria-label="Previous image"
       >
         <FaChevronLeft className="h-5 w-5" />
@@ -83,7 +83,7 @@ const ImageSlider = ({ images, interval = 5000 }) => {
 
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400"
         aria-label="Next image"
       >
         <FaChevronRight className="h-5 w-5" />
@@ -92,7 +92,7 @@ const ImageSlider = ({ images, interval = 5000 }) => {
       {/* Play/Pause Button */}
       <button
         onClick={togglePlayPause}
-        className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+        className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-all duration-300 backdrop-blur-sm opacity-0 group-hover:opacity-100 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400"
         aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
       >
         {isPlaying ? <FaPause className="h-4 w-4" /> : <FaPlay className="h-4 w-4" />}
@@ -104,9 +104,9 @@ const ImageSlider = ({ images, interval = 5000 }) => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-yellow-400 ${
+            className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-green-400 ${
               index === currentIndex
-                ? 'bg-yellow-400 scale-125 shadow-lg shadow-yellow-400/50'
+                ? 'bg-green-400 scale-125 shadow-lg shadow-yellow-400/50'
                 : 'bg-white/50 hover:bg-white/75'
             }`}
             aria-label={`Go to slide ${index + 1}`}
@@ -117,7 +117,7 @@ const ImageSlider = ({ images, interval = 5000 }) => {
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
         <div 
-          className="h-full bg-gradient-to-r from-yellow-400 to-yellow-300 transition-all duration-100 ease-linear"
+          className="h-full bg-gradient-to-r from-green-400 to-green-300 transition-all duration-100 ease-linear"
           style={{ 
             width: isPlaying && !isHovered ? '100%' : '0%',
             animation: isPlaying && !isHovered ? `progress ${interval}ms linear` : 'none'

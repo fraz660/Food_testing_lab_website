@@ -245,13 +245,13 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
         className="bg-white rounded-xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
+        <div className="bg-gradient-to-r from-green-700 to-green-900 text-white p-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <FaBrain className="w-8 h-8" />
               <div>
                 <h2 className="text-2xl font-bold">AI Report Analysis</h2>
-                <p className="text-blue-100">Intelligent insights and recommendations</p>
+                <p className="text-green-100">Intelligent insights and recommendations</p>
               </div>
             </div>
             <button
@@ -269,7 +269,7 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full mb-4"
+                className="w-16 h-16 border-4 border-green-200 border-t-blue-600 rounded-full mb-4"
               />
               <h3 className="text-xl font-semibold text-gray-700 mb-2">Analyzing Report Data</h3>
               <p className="text-gray-500">AI is processing your test results...</p>
@@ -286,14 +286,14 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
                   <div className="text-center">
                     <div className={`text-6xl font-bold ${
                       analysis.overallScore.score >= 90 ? 'text-green-500' :
-                      analysis.overallScore.score >= 70 ? 'text-yellow-500' : 'text-red-500'
+                      analysis.overallScore.score >= 70 ? 'text-green-500' : 'text-green-500'
                     }`}>
                       {analysis.overallScore.score}
                     </div>
                     <div className={`text-2xl font-bold ${
                       analysis.overallScore.grade === 'A' ? 'text-green-500' :
-                      analysis.overallScore.grade === 'B' ? 'text-blue-500' :
-                      analysis.overallScore.grade === 'C' ? 'text-yellow-500' : 'text-red-500'
+                      analysis.overallScore.grade === 'B' ? 'text-green-500' :
+                      analysis.overallScore.grade === 'C' ? 'text-green-500' : 'text-green-500'
                     }`}>
                       Grade {analysis.overallScore.grade}
                     </div>
@@ -304,16 +304,16 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
               {/* Risk Assessment */}
               <div className="bg-white border border-gray-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                  <FaExclamationTriangle className="w-5 h-5 text-orange-500 mr-2" />
+                  <FaExclamationTriangle className="w-5 h-5 text-green-500 mr-2" />
                   Risk Assessment
                 </h3>
                 <div className="space-y-4">
                   {analysis.riskAssessment.map((risk, index) => (
                     <div key={index} className={`p-4 rounded-lg border-l-4 ${
-                      risk.level === 'critical' ? 'bg-red-50 border-red-500' :
-                      risk.level === 'high' ? 'bg-orange-50 border-orange-500' :
-                      risk.level === 'medium' ? 'bg-yellow-50 border-yellow-500' :
-                      'bg-blue-50 border-blue-500'
+                      risk.level === 'critical' ? 'bg-red-50 border-green-500' :
+                      risk.level === 'high' ? 'bg-orange-50 border-green-500' :
+                      risk.level === 'medium' ? 'bg-yellow-50 border-green-500' :
+                      'bg-blue-50 border-green-500'
                     }`}>
                       <div className="flex justify-between items-start">
                         <div className="flex-1">
@@ -323,10 +323,10 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
                           <p className="text-sm text-gray-700"><strong>Action:</strong> {risk.action}</p>
                         </div>
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                          risk.level === 'critical' ? 'bg-red-100 text-red-800' :
-                          risk.level === 'high' ? 'bg-orange-100 text-orange-800' :
-                          risk.level === 'medium' ? 'bg-yellow-100 text-yellow-800' :
-                          'bg-blue-100 text-blue-800'
+                          risk.level === 'critical' ? 'bg-green-100 text-green-800' :
+                          risk.level === 'high' ? 'bg-green-100 text-green-800' :
+                          risk.level === 'medium' ? 'bg-green-100 text-green-800' :
+                          'bg-green-100 text-green-800'
                         }`}>
                           {risk.level.toUpperCase()}
                         </span>
@@ -345,14 +345,14 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {analysis.compliance.map((standard, index) => (
                     <div key={index} className={`p-4 rounded-lg border ${
-                      standard.status === 'compliant' ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                      standard.status === 'compliant' ? 'bg-green-50 border-green-200' : 'bg-red-50 border-green-200'
                     }`}>
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-semibold text-gray-800">{standard.name}</h4>
                         {standard.status === 'compliant' ? (
                           <FaCheckCircle className="w-5 h-5 text-green-500" />
                         ) : (
-                          <FaExclamationTriangle className="w-5 h-5 text-red-500" />
+                          <FaExclamationTriangle className="w-5 h-5 text-green-500" />
                         )}
                       </div>
                       <p className="text-sm text-gray-600">{standard.details}</p>
@@ -364,7 +364,7 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
               {/* AI Recommendations */}
               <div className="bg-white border border-gray-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                  <FaRobot className="w-5 h-5 text-blue-500 mr-2" />
+                  <FaRobot className="w-5 h-5 text-green-500 mr-2" />
                   AI Recommendations
                 </h3>
                 <div className="space-y-4">
@@ -374,8 +374,8 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
                         <div className="flex-1">
                           <div className="flex items-center mb-2">
                             <span className={`px-2 py-1 rounded-full text-xs font-semibold mr-3 ${
-                              rec.priority === 'high' ? 'bg-red-100 text-red-800' :
-                              rec.priority === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                              rec.priority === 'high' ? 'bg-green-100 text-green-800' :
+                              rec.priority === 'medium' ? 'bg-green-100 text-green-800' :
                               'bg-green-100 text-green-800'
                             }`}>
                               {rec.priority.toUpperCase()}
@@ -406,9 +406,9 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
               </div>
 
               {/* Executive Summary */}
-              <div className="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-xl p-6">
+              <div className="bg-gradient-to-r from-green-700 to-blue-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                  <FaChartLine className="w-5 h-5 text-purple-500 mr-2" />
+                  <FaChartLine className="w-5 h-5 text-green-600 mr-2" />
                   Executive Summary
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -417,7 +417,7 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
                     <ul className="space-y-1">
                       {analysis.summary.keyFindings.map((finding, index) => (
                         <li key={index} className="flex items-start">
-                          <FaInfoCircle className="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <FaInfoCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-600 text-sm">{finding}</span>
                         </li>
                       ))}
@@ -443,7 +443,7 @@ const ReportAnalyzer = ({ reportData, isVisible, onClose }) => {
 
               {/* Action Buttons */}
               <div className="flex justify-end space-x-4 pt-4 border-t border-gray-200">
-                <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2">
+                <button className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2">
                   <FaDownload className="w-4 h-4" />
                   <span>Download Report</span>
                 </button>

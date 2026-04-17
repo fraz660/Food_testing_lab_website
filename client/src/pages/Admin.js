@@ -116,8 +116,8 @@ const Admin = () => {
             <p className="text-gray-500 text-sm">Total Contacts</p>
             <p className="text-2xl font-bold text-gray-900">{contacts.length}</p>
           </div>
-          <div className="p-3 bg-blue-100 rounded-full">
-            <FaEnvelope className="h-6 w-6 text-blue-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaEnvelope className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -150,8 +150,8 @@ const Admin = () => {
             <p className="text-gray-500 text-sm">Service Requests</p>
             <p className="text-2xl font-bold text-gray-900">{serviceRequests.length}</p>
           </div>
-          <div className="p-3 bg-purple-100 rounded-full">
-            <FaCog className="h-6 w-6 text-purple-600" />
+          <div className="p-3 bg-green-600 rounded-full">
+            <FaCog className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -170,8 +170,8 @@ const Admin = () => {
                internships.filter(i => i.status === 'pending').length}
             </p>
           </div>
-          <div className="p-3 bg-orange-100 rounded-full">
-            <FaUsers className="h-6 w-6 text-orange-600" />
+          <div className="p-3 bg-green-100 rounded-full">
+            <FaUsers className="h-6 w-6 text-green-600" />
           </div>
         </div>
       </motion.div>
@@ -191,13 +191,13 @@ const Admin = () => {
                 placeholder="Search contacts..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
             >
               <option value="all">All Status</option>
               <option value="new">New</option>
@@ -206,7 +206,7 @@ const Admin = () => {
             </select>
             <button
               onClick={() => exportData(filteredContacts, 'contacts.csv')}
-              className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
             >
               <FaDownload className="h-4 w-4" />
               <span>Export</span>
@@ -247,8 +247,8 @@ const Admin = () => {
                     value={contact.status}
                     onChange={(e) => updateStatus('contacts', contact._id, e.target.value)}
                     className={`text-xs px-2 py-1 rounded-full border-0 ${
-                      contact.status === 'new' ? 'bg-yellow-100 text-yellow-800' :
-                      contact.status === 'contacted' ? 'bg-blue-100 text-blue-800' :
+                      contact.status === 'new' ? 'bg-green-100 text-green-800' :
+                      contact.status === 'contacted' ? 'bg-green-100 text-green-800' :
                       'bg-green-100 text-green-800'
                     }`}
                   >
@@ -258,10 +258,10 @@ const Admin = () => {
                   </select>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                  <button className="text-blue-600 hover:text-blue-900">
+                  <button className="text-green-600 hover:text-green-900">
                     <FaEye className="h-4 w-4" />
                   </button>
-                  <button className="text-red-600 hover:text-red-900">
+                  <button className="text-green-600 hover:text-green-900">
                     <FaTrash className="h-4 w-4" />
                   </button>
                 </td>
@@ -286,13 +286,13 @@ const Admin = () => {
                 placeholder="Search applications..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
             >
               <option value="all">All Status</option>
               <option value="pending">Pending</option>
@@ -346,9 +346,9 @@ const Admin = () => {
                     value={application.status}
                     onChange={(e) => updateStatus('internships', application._id, e.target.value)}
                     className={`text-xs px-2 py-1 rounded-full border-0 ${
-                      application.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                      application.status === 'pending' ? 'bg-green-100 text-green-800' :
                       application.status === 'approved' ? 'bg-green-100 text-green-800' :
-                      'bg-red-100 text-red-800'
+                      'bg-green-100 text-green-800'
                     }`}
                   >
                     <option value="pending">Pending</option>
@@ -357,7 +357,7 @@ const Admin = () => {
                   </select>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                  <button className="text-blue-600 hover:text-blue-900">
+                  <button className="text-green-600 hover:text-green-900">
                     <FaEye className="h-4 w-4" />
                   </button>
                   {application.resume && (
@@ -365,7 +365,7 @@ const Admin = () => {
                       <FaDownload className="h-4 w-4" />
                     </button>
                   )}
-                  <button className="text-red-600 hover:text-red-900">
+                  <button className="text-green-600 hover:text-green-900">
                     <FaTrash className="h-4 w-4" />
                   </button>
                 </td>
@@ -395,7 +395,7 @@ const Admin = () => {
                         <p className="text-sm text-gray-600">{contact.email}</p>
                       </div>
                       <span className={`text-xs px-2 py-1 rounded-full ${
-                        contact.status === 'new' ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'
+                        contact.status === 'new' ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {contact.status}
                       </span>
@@ -414,7 +414,7 @@ const Admin = () => {
                         <p className="text-sm text-gray-600">{application.duration}</p>
                       </div>
                       <span className={`text-xs px-2 py-1 rounded-full ${
-                        application.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 'bg-green-100 text-green-800'
+                        application.status === 'pending' ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'
                       }`}>
                         {application.status}
                       </span>
@@ -468,7 +468,7 @@ const Admin = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 ${
                       activeTab === tab.id
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-green-600 text-white'
                         : 'text-gray-600 hover:bg-gray-100'
                     }`}
                   >

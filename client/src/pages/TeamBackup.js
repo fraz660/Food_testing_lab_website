@@ -98,13 +98,13 @@ const Team = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <h1 className="text-5xl md:text-6xl font-bold">
-              Our <span className="text-blue-200">Team</span>
+              Our <span className="text-green-200">Team</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed">
               Meet our dedicated team of experts committed to delivering excellence in analytical testing
             </p>
             <div className="flex justify-center items-center space-x-8">
@@ -113,7 +113,7 @@ const Team = () => {
                 <span className="text-sm font-medium">Highly Qualified</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaMicroscope className="h-6 w-6 text-yellow-400" />
+                <FaMicroscope className="h-6 w-6 text-green-400" />
                 <span className="text-sm font-medium">Expert Analysts</span>
               </div>
             </div>
@@ -126,7 +126,7 @@ const Team = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Board of <span className="text-blue-600">Directors</span>
+              Board of <span className="text-green-600">Directors</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Visionary leaders guiding our mission of excellence in analytical testing
@@ -136,7 +136,7 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {boardMembers.map((member, index) => (
               <div key={member._id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-                <div className={`h-32 bg-gradient-to-r ${index % 3 === 0 ? 'from-blue-500 to-blue-600' : index % 3 === 1 ? 'from-green-500 to-green-600' : 'from-purple-500 to-purple-600'}`}>
+                <div className={`h-32 bg-gradient-to-r ${index % 3 === 0 ? 'from-green-500 to-green-600' : index % 3 === 1 ? 'from-green-500 to-green-600' : 'from-green-700 to-green-600'}`}>
                   <div className="flex items-center justify-center h-full">
                     <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
                       <span className="text-2xl font-bold text-gray-700">
@@ -147,7 +147,7 @@ const Team = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="text-blue-600 font-semibold mb-4">{member.position}</p>
+                  <p className="text-green-600 font-semibold mb-4">{member.position}</p>
                   
                   <div className="space-y-3">
                     <div>
@@ -167,7 +167,7 @@ const Team = () => {
                   <p className="text-gray-600 text-sm leading-relaxed mt-4">{member.bio}</p>
 
                   {member.email && (
-                    <div className="flex items-center space-x-2 text-sm text-blue-600 mt-4">
+                    <div className="flex items-center space-x-2 text-sm text-green-600 mt-4">
                       <FaEnvelope />
                       <a href={`mailto:${member.email}`} className="hover:underline">
                         {member.email}
@@ -186,7 +186,7 @@ const Team = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Technical <span className="text-blue-600">Team</span>
+              Technical <span className="text-green-600">Team</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Skilled professionals ensuring accurate analysis and quality results
@@ -196,7 +196,7 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <div key={member._id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100">
-                <div className={`h-24 bg-gradient-to-r ${member.department === 'Chemical' ? 'from-blue-400 to-blue-500' : 'from-green-400 to-green-500'}`}>
+                <div className={`h-24 bg-gradient-to-r ${member.department === 'Chemical' ? 'from-green-400 to-green-500' : 'from-green-400 to-green-500'}`}>
                   <div className="flex items-center justify-center h-full">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
                       <span className="text-lg font-bold text-gray-700">
@@ -207,9 +207,9 @@ const Team = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-semibold text-sm mb-2">{member.position}</p>
+                  <p className="text-green-600 font-semibold text-sm mb-2">{member.position}</p>
                   <div className="text-xs text-gray-500 mb-3">
-                    <span className={`px-2 py-1 rounded-full ${member.department === 'Chemical' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}`}>
+                    <span className={`px-2 py-1 rounded-full ${member.department === 'Chemical' ? 'bg-green-100 text-green-800' : 'bg-green-100 text-green-800'}`}>
                       {member.department}
                     </span>
                   </div>
@@ -226,7 +226,7 @@ const Team = () => {
                   </div>
 
                   {member.email && (
-                    <div className="flex items-center space-x-1 text-xs text-blue-600 mt-3">
+                    <div className="flex items-center space-x-1 text-xs text-green-600 mt-3">
                       <FaEnvelope />
                       <a href={`mailto:${member.email}`} className="hover:underline">
                         {member.email}
@@ -254,13 +254,13 @@ const Team = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/internship"
-                className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105"
               >
                 Internship Programs
               </a>
               <a
                 href="/contact"
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-105"
               >
                 Contact HR
               </a>
