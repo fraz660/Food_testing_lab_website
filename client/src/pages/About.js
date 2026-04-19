@@ -2,10 +2,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  FaFlask, 
-  FaCertificate, 
-  FaUsers, 
+import {
+  FaFlask,
+  FaCertificate,
+  FaUsers,
   FaGraduationCap,
   FaAward,
   FaHandshake,
@@ -104,16 +104,16 @@ const About = () => {
                 Excellence in <span className="text-gradient">Testing & Training</span>
               </h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accredited 
-                analytical testing laboratory. Located in the heart of Odisha, we specialize in food, 
+                Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accredited
+                analytical testing laboratory. Located in the heart of Odisha, we specialize in food,
                 pharmaceutical, marine products, and forensic sample analysis.
               </p>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                Our laboratory serves as both a commercial testing facility and a skill development hub, 
-                providing opportunities for students, researchers, and industry professionals to gain 
+                Our laboratory serves as both a commercial testing facility and a skill development hub,
+                providing opportunities for students, researchers, and industry professionals to gain
                 hands-on experience with cutting-edge analytical techniques.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">
                 <div className="text-center p-3 md:p-4 bg-blue-50 rounded-lg">
                   <FaFlask className="h-8 w-8 md:h-10 md:w-10 text-green-600 mx-auto mb-2" />
@@ -136,24 +136,24 @@ const About = () => {
               className="space-y-4 md:space-y-6"
             >
               <div className="grid grid-cols-2 gap-2 md:gap-4">
-                <img 
-                  src="/images/IMG_20250821_132516623.jpg" 
-                  alt="Laboratory Equipment" 
+                <img
+                  src="/images/hero1.jpg"
+                  alt="Laboratory Equipment"
                   className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
-                <img 
-                  src="/images/IMG_20250821_132537634.jpg" 
-                  alt="Testing Facility" 
+                <img
+                  src="/images/hero2.jpg"
+                  alt="Testing Facility"
                   className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
-                <img 
-                  src="/images/IMG_20250821_132559084.jpg" 
-                  alt="Analysis Equipment" 
+                <img
+                  src="/images/hero3.jpg"
+                  alt="Analysis Equipment"
                   className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
-                <img 
-                  src="/images/IMG_20250821_132615414.jpg" 
-                  alt="Lab Instruments" 
+                <img
+                  src="/images/hero4.jpg"
+                  alt="Lab Instruments"
                   className="rounded-lg shadow-lg h-32 sm:h-40 md:h-48 w-full object-cover"
                 />
               </div>
@@ -188,8 +188,8 @@ const About = () => {
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Mission</h3>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                To bridge the gap between academia, industry, and regulatory standards by providing 
-                accurate, reliable, and timely analytical services while fostering scientific education 
+                To bridge the gap between academia, industry, and regulatory standards by providing
+                accurate, reliable, and timely analytical services while fostering scientific education
                 and skill development.
               </p>
             </motion.div>
@@ -205,7 +205,7 @@ const About = () => {
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">Vision</h3>
               <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                To be a leading analytical testing laboratory that contributes significantly to public health, 
+                To be a leading analytical testing laboratory that contributes significantly to public health,
                 food safety, and industrial advancement through scientific excellence and innovation.
               </p>
             </motion.div>
@@ -221,7 +221,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Excellence</h3>
               <p className="text-gray-600 leading-relaxed">
-                We strive for excellence by maintaining the highest quality standards, continuous improvement, 
+                We strive for excellence by maintaining the highest quality standards, continuous improvement,
                 and integrating Good Laboratory Practices with innovative methodologies.
               </p>
             </motion.div>
@@ -287,7 +287,7 @@ const About = () => {
           <div className="relative">
             {/* Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-green-200 hidden md:block"></div>
-            
+
             <div className="space-y-8">
               {milestones.map((milestone, index) => (
                 <motion.div
@@ -305,10 +305,10 @@ const About = () => {
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>
-                  
+
                   {/* Timeline Dot */}
                   <div className="hidden md:block w-4 h-4 bg-green-600 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-white shadow-lg"></div>
-                  
+
                   <div className="w-full md:w-1/2"></div>
                 </motion.div>
               ))}
@@ -328,10 +328,10 @@ const About = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Partnership with CUTM</h2>
             <p className="text-xl text-green-100 max-w-4xl mx-auto leading-relaxed mb-12">
-              Our collaboration with Centurion University of Technology and Management strengthens our mission 
+              Our collaboration with Centurion University of Technology and Management strengthens our mission
               by providing opportunities for skill development, research, and hands-on training for students and professionals.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -345,7 +345,7 @@ const About = () => {
                   Integrated into CUTM's food processing program for comprehensive education
                 </p>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={partnershipsInView ? { opacity: 1, y: 0 } : {}}
@@ -358,7 +358,7 @@ const About = () => {
                   Practical training in food processing, preservation, and analytical techniques
                 </p>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={partnershipsInView ? { opacity: 1, y: 0 } : {}}

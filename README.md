@@ -236,9 +236,9 @@ The website showcases 12+ advanced instruments including:
 - **Dr. Pratyush Kumar Das** - Technical Manager (Biological)
 - **Mr. Victor Pradhan** - Senior Analyst (Chemical)
 - **Ms. Debarati Nandi** - Senior Analyst (Chemical)
-- **Ms. Swapna Rani Nag** - Senior Analyst (Biological)
 - **Mr. Badal Kumar Biswal** - Junior Analyst (Chemical)
-- **Mr. Sanket Bhowmik** - Junior Analyst (Biological)
+- **Ms. Laxmi Angarasingi** - Junior Analyst (Agricultural)
+- **Ms. Sradhanshu S Gauda** - Junior Analyst (Agricultural)
 
 ## 🎯 Key Features
 
