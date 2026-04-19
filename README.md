@@ -237,6 +237,8 @@ The website showcases 12+ advanced instruments including:
 - **Mr. Victor Pradhan** - Senior Analyst (Chemical)
 - **Ms. Debarati Nandi** - Senior Analyst (Chemical)
 - **Ms. Swapna Rani Nag** - Senior Analyst (Biological)
+- **Mr. Badal Kumar Biswal** - Junior Analyst (Chemical)
+- **Mr. Sanket Bhowmik** - Junior Analyst (Biological)
 
 ## 🎯 Key Features
 
