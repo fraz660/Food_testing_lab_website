@@ -102,11 +102,7 @@ Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accr
    ```bash
    npm run create-admin
    ```
-   This will create:
-   - **Username**: admin
-   - **Password**: admin123
-   - **Email**: md@ftl.esse.co.in
-   - **Role**: super_admin
+   This will create the initial super-admin account needed to access the dashboard.
 
 5. **Run the application**
    ```bash
@@ -121,9 +117,8 @@ Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accr
 
 ### 🔐 Admin Access
 - Login URL: http://localhost:3000/admin/login
-- Username: `admin`
-- Password: `admin123`
-- ⚠️ **Important**: Change the default password after first login!
+- Use the credentials created during the `npm run create-admin` step.
+- ⚠️ **Important**: Ensure you set a strong password for security!
 
 ## 📁 Project Structure
 
@@ -304,8 +299,8 @@ PORT=80
 **Gram Tarang Food Testing Lab**
 - **Address**: Plot No.1, IDCO Industrial Estate, Main Road, Paralakhemundi, Gajapati, Odisha – 751200
 - **Email**: md@ftl.esse.co.in
-- **Phone**: +91 XXXX-XXXXXX
-- **Website**: www.gtftl.com
+- **Phone**: +91 94387 32495
+- **Website**: [ftl.org.in](https://ftl.org.in)
 
 ## 📝 License
 
