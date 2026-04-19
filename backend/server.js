@@ -4,6 +4,8 @@ require('dotenv').config()
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
+const compression = require('compression');
 
 // Import configuration
 const connectDB = require('./config/database');
@@ -48,6 +50,11 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(helmet({
+  contentSecurityPolicy: false, // Set to false if you're serving React and have external icons/fonts
+  crossOriginEmbedderPolicy: false
+}));
+app.use(compression());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Create upload directories if they don't exist
