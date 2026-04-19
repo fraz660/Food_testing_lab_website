@@ -27,7 +27,7 @@ const createDefaultAdmin = async () => {
     // Create default admin
     const defaultAdmin = new Admin({
       username: 'admin',
-      email: 'info@ftl.esse.co.in',
+      email: 'md@ftl.esse.co.in',
       password: 'GT@Cutm_2025', // This will be hashed automatically
       role: 'super_admin'
     });
@@ -35,7 +35,7 @@ const createDefaultAdmin = async () => {
     await defaultAdmin.save();
 
     console.log('✅ Default admin created successfully!');
-    console.log('📧 Email: admin@gtftl.com');
+    console.log('📧 Email: md@ftl.esse.co.in');
     console.log('👤 Username: admin');
     console.log('🔑 Password: admin123');
     console.log('🛡️ Role: super_admin');

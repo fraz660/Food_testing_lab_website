@@ -787,7 +787,7 @@ const Internship = () => {
                 Contact Us
               </a>
               <a
-                href="mailto:info@gtftl.com"
+                href="mailto:md@ftl.esse.co.in"
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105"
               >
                 Email Us

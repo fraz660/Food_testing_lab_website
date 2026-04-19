@@ -105,7 +105,7 @@ Gram Tarang Foods Testing Pvt. Ltd. (FTL) was established in 2022 as a NABL-accr
    This will create:
    - **Username**: admin
    - **Password**: admin123
-   - **Email**: admin@gtftl.com
+   - **Email**: md@ftl.esse.co.in
    - **Role**: super_admin
 
 5. **Run the application**
@@ -303,7 +303,7 @@ PORT=80
 
 **Gram Tarang Food Testing Lab**
 - **Address**: Plot No.1, IDCO Industrial Estate, Main Road, Paralakhemundi, Gajapati, Odisha – 751200
-- **Email**: info@gtftl.com
+- **Email**: md@ftl.esse.co.in
 - **Phone**: +91 XXXX-XXXXXX
 - **Website**: www.gtftl.com
 

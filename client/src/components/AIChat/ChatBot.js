@@ -100,7 +100,7 @@ Gajapati, Odisha – 751200
 
 **Contact Details:**
 📱 Phone: +91 94387 32495
-📧 Email: info@ftl.org.in
+📧 Email: md@ftl.esse.co.in
 🌐 Website: www.ftl.org.in
 
 **Business Hours:**

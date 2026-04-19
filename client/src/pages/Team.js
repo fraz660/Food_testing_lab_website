@@ -15,7 +15,7 @@ const Team = () => {
       name: 'Dr. Preetha Bhadra',
       position: 'Managing Director',
       department: 'Management',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'Ph.D in Biophysics',
       experience: '15+ years in laboratory management and biophysics research',
       specialization: 'Laboratory Management, Quality Systems, Biophysics',
@@ -28,12 +28,12 @@ const Team = () => {
       name: 'Prof. Supriya Pattanaik',
       position: 'Director',
       department: 'Management',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'Professor, Centurion University',
       experience: '20+ years in academia and food technology',
       specialization: 'Food Technology, Academic Leadership',
       bio: 'Prof. Supriya Pattanaik serves as Director of GTFTL and brings extensive academic and industry expertise in food technology and quality assurance from Centurion University of Technology and Management.',
-      img: '',
+      img: '/supriya-mam.jpg',
       isActive: true
     },
     {
@@ -41,12 +41,12 @@ const Team = () => {
       name: 'Prof. D. N. Rao',
       position: 'Director',
       department: 'Management',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'Professor & Distinguished Scientist',
       experience: '25+ years in food science and technology',
       specialization: 'Food Science, Research & Development',
       bio: 'Prof. D. N. Rao is a distinguished scientist and Director of GTFTL with over 25 years of experience in food science, technology, and research. He provides strategic guidance on research and development initiatives.',
-      img: '',
+      img: '/rao-sir.jpg',
       isActive: true
     }
   ];
@@ -58,7 +58,7 @@ const Team = () => {
       name: 'Dr. Bhadram K Chekraverthy',
       position: 'Technical Manager – Chemical Department',
       department: 'Chemical',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'Ph.D. in Pharmaceutical Analysis',
       experience: '10+ years in chemical analysis',
       specialization: 'HPLC, LC-MS/MS, GC-MS, ICP-MS',
@@ -71,7 +71,7 @@ const Team = () => {
       name: 'Dr. Pratyush Kumar Das',
       position: 'Technical Head of Microbiology',
       department: 'Biological',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'Ph.D. Biotechnology',
       experience: '8+ years in microbiology',
       specialization: 'Microbial Genomics, Bioremediation',
@@ -84,7 +84,7 @@ const Team = () => {
       name: 'Mr. Victor Pradhan',
       position: 'Senior Analyst (Chemical)',
       department: 'Chemical',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'M.Tech in Biotechnology',
       experience: '6+ years in analytical chemistry',
       specialization: 'LC-MS/MS, GC-MS/MS, ICPMS, HPLC',
@@ -97,7 +97,7 @@ const Team = () => {
       name: 'Ms. Debarati Nandi',
       position: 'Senior Analyst (Chemical)',
       department: 'Chemical',
-      email: 'info@ftl.org.in',
+      email: 'md@ftl.esse.co.in',
       education: 'M.Sc. Chemistry',
       experience: '4+ years in research',
       specialization: 'Research Analytics, Method Development',
@@ -107,18 +107,44 @@ const Team = () => {
     },
     {
       _id: '8',
-      name: 'Ms. Swapna Rani Nag',
-      position: 'Senior Analyst (Biological)',
-      department: 'Biological',
-      email: 'info@ftl.org.in',
-      education: 'M.Sc. Microbiology',
-      experience: '5+ years in biological testing',
+      name: 'Mr.Badal K Biswal',
+      position: 'Junior Analyst (Biological)',
+      department: 'Agriculture',
+      email: 'md@ftl.esse.co.in',
+      education: 'B.Tech in Agriculture',
+      experience: '2+ years',
       specialization: 'Microbiological Testing, Culture Techniques',
       bio: 'Skilled microbiologist specializing in food safety testing and microbiological quality assurance.',
       isActive: true,
-      img: ''
+      img: '/Mr.Badal Biswal.jpg'
+    },
+    {
+      _id: '9',
+      name: 'Ms.Laxmi Angarasingi',
+      position: 'Junior Analyst (Biological)',
+      department: 'Agriculture',
+      email: 'md@ftl.esse.co.in',
+      education: 'M.Sc',
+      experience: '1+ years',
+      specialization: 'Microbiological Testing, Culture Techniques',
+      bio: 'Skilled microbiologist specializing in food safety testing and microbiological quality assurance.',
+      isActive: true,
+      img: '/Ms.Laxmi.JPG'
+    },
+    {
+      _id: '10',
+      name: 'Ms.Sradhanshu S Gauda',
+      position: 'Junior Analyst',
+      department: 'Agriculture',
+      email: 'md@ftl.esse.co.in',
+      education: 'M.Sc',
+      experience: '6 Months',
+      specialization: 'Microbiological Testing, Culture Techniques',
+      bio: 'Skilled microbiologist specializing in food safety testing and microbiological quality assurance.',
+      isActive: true,
+      img: '/sradhanshu.jpeg'
     }
-   ];
+  ];
 
   // Fetch team data from API
   useEffect(() => {
@@ -126,52 +152,52 @@ const Team = () => {
       try {
         setLoading(true);
         console.log(`Fetching team data from API... (Attempt ${retryCount + 1})`);
-        
+
         // Use the correct public team endpoint
         const response = await api.get('/api/team');
-        
+
         if (response.data.success && response.data.data) {
           const allMembers = response.data.data;
           console.log('✅ API Success - Total members:', allMembers.length);
-          
-       
-          
-          const technical = allMembers.filter(member => 
+
+
+
+          const technical = allMembers.filter(member =>
             member.department !== 'Management' && member.isActive
           ).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
 
           const board = allMembers.filter(member =>
             member.department === 'Management' && member.isActive
           ).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-         
+
           console.log('Technical members:', technical.length);
           console.log('Board members:', board.length);
-          
+
           // Use real data if available, otherwise fallback
           setTeamMembers(technical.length > 0 ? technical : fallbackTeamMembers);
           setBoardMembers(board.length > 0 ? board : fallbackBoardMembers);
           setError(null); // Clear any previous errors
-          
+
         } else {
           throw new Error(`API returned: ${JSON.stringify(response.data)}`);
         }
       } catch (err) {
         console.error('❌ Team API Error:', err.message);
-        
+
         // Retry logic - retry up to 2 times
         if (retryCount < 2) {
           console.log(`Retrying in 2 seconds... (${retryCount + 1}/2)`);
           setTimeout(() => fetchTeamData(retryCount + 1), 2000);
           return;
         }
-        
+
         // After all retries failed, use fallback data
         console.log('All retries failed, using fallback data...');
-      
+
         setTeamMembers(fallbackTeamMembers);
         setBoardMembers(fallbackBoardMembers);
         setError(null); // Don't show error to users, just use fallback silently
-        
+
       } finally {
         setLoading(false);
       }
@@ -237,8 +263,8 @@ const Team = () => {
                   <div className="flex items-center justify-center h-full">
                     <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
                       {member.img ? (
-                        <img 
-                          src={`${member.img}`} 
+                        <img
+                          src={`${member.img}`}
                           alt={member.name}
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -247,9 +273,9 @@ const Team = () => {
                           }}
                         />
                       ) : null}
-                      <span 
+                      <span
                         className="text-xl font-bold text-gray-700 flex items-center justify-center w-full h-full bg-green-600"
-                        style={{display: member.img ? 'none' : 'flex'}}
+                        style={{ display: member.img ? 'none' : 'flex' }}
                       >
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </span>
@@ -286,29 +312,29 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <div key={member._id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100">
-                                 <div className={`h-24 bg-gradient-to-r ${member.department === 'Chemical' ? 'from-green-400 to-green-500' : 'from-green-400 to-green-500'}`}>
-                   <div className="flex items-center justify-center h-full">
-                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                       {member.img ? (
-                         <img 
-                           src={`${member.img}`} 
-                           alt={member.name}
-                           className="w-full h-full object-cover"
-                           onError={(e) => {
-                             e.target.style.display = 'none';
-                             e.target.nextSibling.style.display = 'flex';
-                           }}
-                         />
-                       ) : null}
-                       <span 
-                         className="text-lg font-bold text-gray-700 flex items-center justify-center w-full h-full"
-                         style={{display: member.img ? 'none' : 'flex'}}
-                       >
-                         {member.name.split(' ').map(n => n[0]).join('')}
-                       </span>
-                     </div>
-                   </div>
-                 </div>
+                <div className={`h-24 bg-gradient-to-r ${member.department === 'Chemical' ? 'from-green-400 to-green-500' : 'from-green-400 to-green-500'}`}>
+                  <div className="flex items-center justify-center h-full">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                      {member.img ? (
+                        <img
+                          src={`${member.img}`}
+                          alt={member.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.nextSibling.style.display = 'flex';
+                          }}
+                        />
+                      ) : null}
+                      <span
+                        className="text-lg font-bold text-gray-700 flex items-center justify-center w-full h-full"
+                        style={{ display: member.img ? 'none' : 'flex' }}
+                      >
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
                   <p className="text-green-600 font-semibold text-sm mb-2">{member.position}</p>
@@ -317,7 +343,7 @@ const Team = () => {
                       {member.department}
                     </span>
                   </div>
-                  
+
                   <div className="space-y-2 text-xs">
                     <div>
                       <span className="font-semibold text-gray-900">Education:</span>
@@ -344,7 +370,7 @@ const Team = () => {
               Join Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're always looking for talented professionals to join our growing team. 
+              We're always looking for talented professionals to join our growing team.
               Explore our internship programs and career opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

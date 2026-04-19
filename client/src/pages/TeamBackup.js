@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaEnvelope, FaFlask, FaMicroscope } from 'react-icons/fa';
 
 const Team = () => {
-  const [loading, setLoading] = useState(false);
-
-  // Simple hardcoded team data that WILL work
+  // Simple hardcoded team data
   const boardMembers = [
     {
       _id: '1',
       name: 'Dr. Preetha Bhadra',
       position: 'Managing Director',
       department: 'Management',
-      email: 'preetha@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'Ph.D. in Analytical Chemistry',
       experience: '15+ years in laboratory management',
       specialization: 'Laboratory Management, Quality Systems',
@@ -23,7 +21,7 @@ const Team = () => {
       name: 'Prof. Supriya Pattanaik',
       position: 'Director',
       department: 'Management',
-      email: 'supriya@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'PhD (RMIT University), MPhil (NIMHANS), MA (TISS)',
       experience: '25+ years in strategic leadership',
       specialization: 'Strategic Leadership, Social Development',
@@ -35,7 +33,7 @@ const Team = () => {
       name: 'Prof. D. N. Rao',
       position: 'Director',
       department: 'Management',
-      email: 'dnrao@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'Civil Engineering (Osmania University), PGDM (IIM Calcutta)',
       experience: '20+ years in strategic planning',
       specialization: 'Strategic Planning, Enterprise Development',
@@ -50,7 +48,7 @@ const Team = () => {
       name: 'Dr. Bhadram Kalyan Chekraverthy',
       position: 'Senior Analyst',
       department: 'Chemical',
-      email: 'bhadram@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'Ph.D. Chemistry',
       experience: '10+ years in chemical analysis',
       specialization: 'Chemical Analysis, Instrumentation',
@@ -62,7 +60,7 @@ const Team = () => {
       name: 'Dr. Pratyush Kumar Das',
       position: 'Microbiologist',
       department: 'Biological',
-      email: 'pratyush@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'Ph.D. Microbiology',
       experience: '8+ years in microbiology',
       specialization: 'Food Microbiology, Pathogen Detection',
@@ -74,7 +72,7 @@ const Team = () => {
       name: 'Mr. Victor Pradhan',
       position: 'Chemical Analyst',
       department: 'Chemical',
-      email: 'victor@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'M.Sc. Chemistry',
       experience: '6+ years in analytical chemistry',
       specialization: 'Analytical Chemistry, Quality Control',
@@ -86,7 +84,7 @@ const Team = () => {
       name: 'Ms. Debarati Nandi',
       position: 'Research Analyst',
       department: 'Chemical',
-      email: 'debarati@gtftl.com',
+      email: 'md@ftl.esse.co.in',
       education: 'M.Sc. Chemistry',
       experience: '4+ years in research',
       specialization: 'Research Analytics, Method Development',
@@ -132,7 +130,6 @@ const Team = () => {
               Visionary leaders guiding our mission of excellence in analytical testing
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {boardMembers.map((member, index) => (
               <div key={member._id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
@@ -163,9 +160,7 @@ const Team = () => {
                       <div className="text-gray-600 text-sm">{member.specialization}</div>
                     </div>
                   </div>
-
                   <p className="text-gray-600 text-sm leading-relaxed mt-4">{member.bio}</p>
-
                   {member.email && (
                     <div className="flex items-center space-x-2 text-sm text-green-600 mt-4">
                       <FaEnvelope />
@@ -192,7 +187,6 @@ const Team = () => {
               Skilled professionals ensuring accurate analysis and quality results
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
               <div key={member._id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100">
@@ -224,7 +218,6 @@ const Team = () => {
                       <div className="text-gray-600">{member.experience}</div>
                     </div>
                   </div>
-
                   {member.email && (
                     <div className="flex items-center space-x-1 text-xs text-green-600 mt-3">
                       <FaEnvelope />

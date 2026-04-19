@@ -53,7 +53,7 @@ const Contact = () => {
       icon: FaEnvelope,
       title: 'Email Addresses',
       details: [
-        'info@ftl.org.in (General)',
+        'md@ftl.esse.co.in (General)',
       ],
       color: 'text-green-600'
     },
@@ -372,7 +372,7 @@ const Contact = () => {
                   </a>
 
                   <a
-                    href="mailto:info@ftl.org.in"
+                    href="mailto:md@ftl.esse.co.in"
                     className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl hover:bg-green-100 transition-colors duration-200"
                   >
                     <div className="p-3 bg-green-500 rounded-full">

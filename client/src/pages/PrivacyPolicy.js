@@ -339,7 +339,7 @@ const PrivacyPolicy = () => {
                 <p><strong>Gram Tarang Food Testing Laboratory Pvt. Ltd.</strong></p>
                 <p>Plot No.1, IDCO Industrial Estate, Main Road</p>
                 <p>Paralakhemundi, Gajapati, Odisha – 751200</p>
-                <p>Email: <a href="mailto:info@ftl.org.in" className="text-green-600 hover:text-green-700 underline">info@ftl.org.in</a></p>
+                <p>Email: <a href="mailto:md@ftl.esse.co.in" className="text-green-600 hover:text-green-700 underline">md@ftl.esse.co.in</a></p>
                 <p>Phone: <a href="tel:+919438732495" className="text-green-600 hover:text-green-700 underline">+91 94387 32495</a></p>
               </div>
             </div>

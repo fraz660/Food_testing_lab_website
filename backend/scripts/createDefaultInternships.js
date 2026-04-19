@@ -60,7 +60,7 @@ const defaultInternships = [
     benefits: ['Certificate of Completion', 'Hands-on Training', 'Mentorship', 'Networking Opportunities'],
     featured: true,
     department: 'Research & Development',
-    contactEmail: 'internships@gramtarangfoodtesting.com',
+    contactEmail: 'md@ftl.esse.co.in',
     contactPhone: '+91-XXX-XXX-XXXX'
   },
   {
@@ -100,7 +100,7 @@ const defaultInternships = [
     benefits: ['Industry Exposure', 'Equipment Training', 'Certification', 'Performance Bonus'],
     featured: true,
     department: 'Chemical Analysis',
-    contactEmail: 'chemistry@gramtarangfoodtesting.com'
+    contactEmail: 'md@ftl.esse.co.in'
   },
   {
     title: 'Quality Assurance Intern',
@@ -138,7 +138,7 @@ const defaultInternships = [
     skills: ['Quality Management', 'Documentation', 'Process Improvement', 'Compliance'],
     benefits: ['QMS Training', 'Audit Experience', 'Professional Development', 'Certificate'],
     department: 'Quality Assurance',
-    contactEmail: 'qa@gramtarangfoodtesting.com'
+    contactEmail: 'md@ftl.esse.co.in'
   },
   {
     title: 'Environmental Testing Intern',
@@ -176,7 +176,7 @@ const defaultInternships = [
     skills: ['Environmental Testing', 'Water Analysis', 'Data Collection', 'Sustainability'],
     benefits: ['Field Experience', 'Environmental Awareness', 'Research Exposure', 'Certificate'],
     department: 'Environmental Division',
-    contactEmail: 'environment@gramtarangfoodtesting.com'
+    contactEmail: 'md@ftl.esse.co.in'
   },
   {
     title: 'Laboratory Operations Intern',
@@ -214,7 +214,7 @@ const defaultInternships = [
     skills: ['Equipment Maintenance', 'Laboratory Operations', 'Safety Protocols', 'Process Optimization'],
     benefits: ['Technical Training', 'Equipment Exposure', 'Operations Experience', 'Professional Growth'],
     department: 'Laboratory Operations',
-    contactEmail: 'operations@gramtarangfoodtesting.com'
+    contactEmail: 'md@ftl.esse.co.in'
   }
 ];
 

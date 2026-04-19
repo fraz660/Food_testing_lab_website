@@ -58,7 +58,7 @@ const defaultPages = [
     
     <h2>Contact Information</h2>
     <p>If you have questions about this Privacy Policy, please contact us at:</p>
-    <p>Email: info@gramtarangfoodtesting.com</p>
+    <p>Email: md@ftl.esse.co.in</p>
     <p>Phone: +91-XXX-XXX-XXXX</p>`,
     metaDescription: 'Privacy Policy for Gram Tarang Food Testing Laboratory. Learn how we collect, use, and protect your personal information.',
     status: 'published'
@@ -150,7 +150,7 @@ const defaultPages = [
     
     <h2>Contact Details</h2>
     <p><strong>Phone:</strong> +91-XXX-XXX-XXXX<br>
-    <strong>Email:</strong> info@gramtarangfoodtesting.com<br>
+    <strong>Email:</strong> md@ftl.esse.co.in<br>
     <strong>Website:</strong> www.gramtarangfoodtesting.com</p>
     
     <h2>Business Hours</h2>
@@ -161,7 +161,7 @@ const defaultPages = [
     <h2>Emergency Contact</h2>
     <p>For urgent testing requirements:</p>
     <p><strong>Emergency Hotline:</strong> +91-XXX-XXX-XXXX<br>
-    <strong>Email:</strong> emergency@gramtarangfoodtesting.com</p>
+    <strong>Email:</strong> md@ftl.esse.co.in</p>
     
     <h2>Sample Submission</h2>
     <p>Samples can be submitted during business hours. Please ensure proper labeling and documentation. For sample collection services, please contact us in advance.</p>

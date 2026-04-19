@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import api, { API_BASE_URL } from '../api/config';
-import { 
-  FaLinkedin, 
-  FaEnvelope, 
+import {
+  FaLinkedin,
+  FaEnvelope,
   FaGraduationCap,
   FaFlask,
   FaMicroscope,
@@ -17,7 +17,7 @@ const Team = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
   const [boardRef, boardInView] = useInView({ threshold: 0.3, triggerOnce: true });
   const [teamRef, teamInView] = useInView({ threshold: 0.3, triggerOnce: true });
-  
+
   // State for team data
   const [teamMembers, setTeamMembers] = useState([]);
   const [boardMembers, setBoardMembers] = useState([]);
@@ -35,7 +35,7 @@ const Team = () => {
           name: 'Dr. Preetha Bhadra',
           position: 'Managing Director',
           department: 'Management',
-          email: 'preetha@gtftl.com',
+          email: 'md@ftl.esse.co.in',
           profileImage: null,
           experience: '15+ years',
           education: 'Ph.D. Analytical Chemistry',
@@ -49,7 +49,7 @@ const Team = () => {
           name: 'Dr. Bhadram Kalyan',
           position: 'Senior Analyst',
           department: 'Chemical',
-          email: 'bhadram@gtftl.com',
+          email: 'md@ftl.esse.co.in',
           profileImage: null,
           experience: '8+ years',
           education: 'Ph.D. Chemistry',
@@ -62,38 +62,38 @@ const Team = () => {
 
     // Set emergency fallback immediately
     emergencyFallback();
-    
+
     // Then try to fetch real data
     const fetchTeamData = async () => {
       try {
         setLoading(true);
         const response = await api.get('/api/team');
-        
+
         if (response.data.success) {
           const allMembers = response.data.data;
           console.log('All team members received:', allMembers);
-          
+
           // Separate board members (Management department) and technical team
           console.log('All departments found:', [...new Set(allMembers.map(m => m.department))]);
-          
-          const board = allMembers.filter(member => 
+
+          const board = allMembers.filter(member =>
             member.department === 'Management' && member.isActive
           ).sort((a, b) => a.displayOrder - b.displayOrder);
-          
-          const technical = allMembers.filter(member => 
+
+          const technical = allMembers.filter(member =>
             member.department !== 'Management' && member.isActive
           ).sort((a, b) => a.displayOrder - b.displayOrder);
-          
+
           console.log('Board members filtered:', board);
           console.log('Technical members filtered:', technical);
           console.log('Technical members count:', technical.length);
-          
+
           setBoardMembers(board);
           setTeamMembers(technical);
-          
+
           // Ensure error is cleared when API succeeds
           setError(null);
-          
+
           // Force update after a delay to ensure state is set
           setTimeout(() => {
             console.log('Final teamMembers state:', technical);
@@ -106,7 +106,7 @@ const Team = () => {
         console.error('Error fetching team data:', err);
         console.log('Using fallback team data...');
         setError('API Error - Using fallback data');
-        
+
         // Fallback team data
         const fallbackBoardMembers = [
           {
@@ -114,7 +114,7 @@ const Team = () => {
             name: 'Dr. Rajesh Kumar',
             position: 'Director & CEO',
             department: 'Management',
-            email: 'director@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543210',
             profileImage: null,
             experience: '15+ years in food safety and laboratory management',
@@ -128,7 +128,7 @@ const Team = () => {
             name: 'Mrs. Priya Sharma',
             position: 'Deputy Director',
             department: 'Management',
-            email: 'deputy@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543211',
             profileImage: null,
             experience: '12+ years in laboratory operations',
@@ -142,7 +142,7 @@ const Team = () => {
             name: 'Mr. Amit Verma',
             position: 'Chief Financial Officer',
             department: 'Management',
-            email: 'cfo@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543212',
             profileImage: null,
             experience: '10+ years in finance and administration',
@@ -152,14 +152,13 @@ const Team = () => {
             isActive: true
           }
         ];
-
         const fallbackTechnicalMembers = [
           {
             _id: 'tech1',
             name: 'Dr. Anita Singh',
             position: 'Senior Food Analyst',
             department: 'Chemical',
-            email: 'anita@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543213',
             profileImage: null,
             experience: '8+ years in food analysis',
@@ -173,7 +172,7 @@ const Team = () => {
             name: 'Mr. Suresh Patel',
             position: 'Microbiologist',
             department: 'Biological',
-            email: 'suresh@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543214',
             profileImage: null,
             experience: '6+ years in microbiology',
@@ -187,7 +186,7 @@ const Team = () => {
             name: 'Ms. Ritu Jain',
             position: 'Research Associate',
             department: 'Research',
-            email: 'ritu@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543215',
             profileImage: null,
             experience: '4+ years in research',
@@ -201,7 +200,7 @@ const Team = () => {
             name: 'Mr. Vikash Kumar',
             position: 'Quality Analyst',
             department: 'Chemical',
-            email: 'vikash@gramtaranglab.com',
+            email: 'md@ftl.esse.co.in',
             phone: '+91-9876543216',
             profileImage: null,
             experience: '5+ years in quality control',
@@ -211,7 +210,6 @@ const Team = () => {
             isActive: true
           }
         ];
-
         setBoardMembers(fallbackBoardMembers);
         setTeamMembers(fallbackTechnicalMembers);
         // Don't clear error - keep it so we know fallback data is being used
@@ -220,7 +218,6 @@ const Team = () => {
         setLoading(false);
       }
     };
-
     fetchTeamData();
   }, []);
 
@@ -233,7 +230,7 @@ const Team = () => {
       'Research': ['bg-violet-500'],
       'Administration': ['bg-gray-500']
     };
-    
+
     const departmentColors = colors[department] || ['bg-gray-500'];
     return departmentColors[index % departmentColors.length] || 'bg-gray-500';
   };
@@ -256,8 +253,8 @@ const Team = () => {
       <div className="min-h-screen pt-16 flex items-center justify-center">
         <div className="text-center">
           <p className="text-lg text-green-600 mb-4">{error}</p>
-          <button 
-            onClick={() => window.location.reload()} 
+          <button
+            onClick={() => window.location.reload()}
             className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
           >
             Retry
@@ -266,14 +263,6 @@ const Team = () => {
       </div>
     );
   }
-
-  // Debug: Log component state
-  console.log('Team component rendering:', { 
-    loading, 
-    error, 
-    boardCount: boardMembers.length, 
-    teamCount: teamMembers.length 
-  });
 
   // Emergency fallback if everything fails
   if (!boardMembers && !teamMembers) {
@@ -284,8 +273,8 @@ const Team = () => {
           <p className="text-xl text-gray-600 mt-4">Loading team information...</p>
           <div className="mt-8 p-4 bg-green-100 rounded">
             <p className="text-green-800">Debug: Emergency render mode</p>
-            <button 
-              onClick={() => window.location.reload()} 
+            <button
+              onClick={() => window.location.reload()}
               className="mt-2 px-4 py-2 bg-green-600 text-white rounded"
             >
               Reload Page
@@ -298,11 +287,6 @@ const Team = () => {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Debug indicator */}
-      <div className="fixed top-20 right-4 bg-green-500 text-white p-2 text-xs z-50">
-        Team: {teamMembers.length} | Board: {boardMembers.length} | Loading: {loading.toString()}
-      </div>
-      
       {/* Hero Section */}
       <section ref={heroRef} className="py-20 bg-gradient-to-br from-green-700 via-green-800 to-green-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -344,8 +328,8 @@ const Team = () => {
           >
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               <div className="text-center lg:text-left">
-                <img 
-                  src="/images/team/md-photo.jpg" 
+                <img
+                  src="/images/team/md-photo.jpg"
                   alt="Dr. Preetha Bhadra"
                   className="w-48 h-48 rounded-full mx-auto lg:mx-0 object-cover shadow-xl"
                 />
@@ -356,24 +340,24 @@ const Team = () => {
                   <p className="text-green-600 font-semibold">Dr. Preetha Bhadra, Managing Director</p>
                 </div>
                 <blockquote className="text-lg text-gray-600 leading-relaxed italic">
-                  "It gives me immense pleasure to welcome you to Gram Tarang Food Testing Laboratory (FTL). 
-                  Established with the vision of bridging the gap between academia, industry, and regulatory standards, 
-                  our laboratory is committed to ensuring the highest quality in food, pharmaceutical, marine, and 
+                  "It gives me immense pleasure to welcome you to Gram Tarang Food Testing Laboratory (FTL).
+                  Established with the vision of bridging the gap between academia, industry, and regulatory standards,
+                  our laboratory is committed to ensuring the highest quality in food, pharmaceutical, marine, and
                   nutraceutical testing.
-                  
-                  At FTL, we believe that safety, quality, and innovation are the pillars of progress. With our 
-                  NABL-accredited infrastructure, world-class instrumentation, and a dedicated team of experts, 
-                  we strive to deliver accurate, reliable, and timely analytical services. Our collaboration with 
-                  Centurion University of Technology and Management (CUTM) further strengthens our mission by providing 
-                  opportunities for skill development, research, and hands-on training for the next generation of 
+
+                  At FTL, we believe that safety, quality, and innovation are the pillars of progress. With our
+                  NABL-accredited infrastructure, world-class instrumentation, and a dedicated team of experts,
+                  we strive to deliver accurate, reliable, and timely analytical services. Our collaboration with
+                  Centurion University of Technology and Management (CUTM) further strengthens our mission by providing
+                  opportunities for skill development, research, and hands-on training for the next generation of
                   scientists and professionals.
-                  
-                  Beyond testing, FTL stands as a platform for capacity building—offering workshops, internships, and 
-                  specialized training programs to students, researchers, and industry partners. By integrating Good 
-                  Laboratory Practices (GLP) with a strong focus on innovation and excellence, we aspire to make a 
+
+                  Beyond testing, FTL stands as a platform for capacity building—offering workshops, internships, and
+                  specialized training programs to students, researchers, and industry partners. By integrating Good
+                  Laboratory Practices (GLP) with a strong focus on innovation and excellence, we aspire to make a
                   significant contribution toward ensuring public health, food safety, and industrial advancement.
-                  
-                  I invite you to explore our services, collaborate with our teams, and join us in building a future 
+
+                  I invite you to explore our services, collaborate with our teams, and join us in building a future
                   where science and integrity drive sustainable growth."
                 </blockquote>
               </div>
@@ -398,7 +382,6 @@ const Team = () => {
               Visionary leaders guiding our mission of excellence in analytical testing
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {boardMembers.map((member, index) => (
               <motion.div
@@ -411,8 +394,8 @@ const Team = () => {
                 {/* Header with image */}
                 <div className={`${getDepartmentColor(member.department, index)} p-8 text-white text-center`}>
                   <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                    <img 
-                      src={member.profileImage ? `${API_BASE_URL}${member.profileImage}` : `/images/team/default-avatar.jpg`} 
+                    <img
+                      src={member.profileImage ? `${API_BASE_URL}${member.profileImage}` : `/images/team/default-avatar.jpg`}
                       alt={member.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -423,7 +406,6 @@ const Team = () => {
                   <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
                   <p className="text-white text-opacity-90 font-semibold">{member.position}</p>
                 </div>
-
                 {/* Content */}
                 <div className="p-8 space-y-6">
                   <div className="grid grid-cols-2 gap-4 text-sm">
@@ -436,14 +418,11 @@ const Team = () => {
                       <div className="text-gray-600">{member.experience}</div>
                     </div>
                   </div>
-
                   <div>
                     <div className="font-semibold text-gray-900 mb-2">Specialization</div>
                     <div className="text-gray-600 text-sm">{member.specialization}</div>
                   </div>
-
                   <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-
                   {member.email && (
                     <div className="flex items-center space-x-2 text-sm text-green-600">
                       <FaEnvelope />
@@ -474,20 +453,7 @@ const Team = () => {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Skilled professionals ensuring accurate analysis and quality results
             </p>
-            {teamMembers.length > 0 && (
-              <div className="mt-6 flex justify-center items-center space-x-8">
-                <div className="flex items-center space-x-2">
-                  <FaFlask className="h-5 w-5 text-green-500" />
-                  <span className="text-sm font-medium text-gray-600">{teamMembers.length} Expert Analysts</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <FaGraduationCap className="h-5 w-5 text-green-500" />
-                  <span className="text-sm font-medium text-gray-600">Advanced Degrees</span>
-                </div>
-              </div>
-            )}
           </motion.div>
-
           {teamMembers.length === 0 && loading ? (
             <div className="text-center py-12">
               <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-green-500 bg-white transition ease-in-out duration-150">
@@ -504,10 +470,8 @@ const Team = () => {
               <p className="text-xl text-gray-500 mb-2">No Technical Team Members Found</p>
               <p className="text-gray-400">Team information is being updated. Please check back soon.</p>
               <div className="mt-4 text-sm text-gray-500">
-                <p>Status: Loading={loading.toString()}, Error={error || 'none'}</p>
-                <p>Board Members: {boardMembers.length}, Team Members: {teamMembers.length}</p>
-                <button 
-                  onClick={() => window.location.reload()} 
+                <button
+                  onClick={() => window.location.reload()}
                   className="mt-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                 >
                   Refresh Page
@@ -515,159 +479,73 @@ const Team = () => {
               </div>
             </div>
           ) : (
-            <>
-              {/* Department Statistics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                {[...new Set(teamMembers.map(m => m.department))].filter(dept => dept !== 'Management').map((dept) => {
-                  const deptMembers = teamMembers.filter(m => m.department === dept);
-                  const deptCount = deptMembers.length;
-                  
-                  if (deptCount === 0) return null;
-                  
-                  return (
-                    <motion.div
-                      key={dept}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={teamInView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                      className={`text-center p-6 rounded-xl ${
-                        dept === 'Chemical' ? 'bg-blue-50 border border-green-200' :
-                        dept === 'Biological' ? 'bg-green-50 border border-green-200' :
-                        'bg-green-600 border border-green-200'
-                      }`}
-                    >
-                      <div className={`w-12 h-12 mx-auto mb-3 rounded-full flex items-center justify-center ${
-                        dept === 'Chemical' ? 'bg-green-500 text-white' :
-                        dept === 'Biological' ? 'bg-green-500 text-white' :
-                        'bg-green-600 text-white'
-                      }`}>
-                        {dept === 'Chemical' ? <FaFlask className="h-6 w-6" /> :
-                         dept === 'Biological' ? <FaMicroscope className="h-6 w-6" /> :
-                         <FaGraduationCap className="h-6 w-6" />}
-                      </div>
-                      <h3 className="font-bold text-2xl text-gray-900 mb-1">{deptCount}</h3>
-                      <p className="text-gray-600 font-medium">{dept} Specialists</p>
-                    </motion.div>
-                  );
-                })}
-              </div>
-              
-              {/* Team Member Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
-              <motion.div
-                key={member._id || index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={teamInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200"
-              >
-                <div className="flex items-start space-x-6">
-                  {/* Profile Image */}
-                  <div className="flex-shrink-0">
-                    <div className={`w-24 h-24 rounded-full overflow-hidden ${getDepartmentColor(member.department, index)} p-1`}>
-                      <img 
-                        src={member.profileImage ? `${API_BASE_URL}${member.profileImage}` : `/images/team/default-avatar.jpg`} 
-                        alt={member.name}
-                        className="w-full h-full object-cover rounded-full bg-white"
-                        onError={(e) => {
-                          e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=150&background=ffffff&color=333333&format=png`;
-                        }}
-                      />
+                <motion.div
+                  key={member._id || index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  animate={teamInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200"
+                >
+                  <div className="flex items-start space-x-6">
+                    {/* Profile Image */}
+                    <div className="flex-shrink-0">
+                      <div className={`w-24 h-24 rounded-full overflow-hidden ${getDepartmentColor(member.department, index)} p-1`}>
+                        <img
+                          src={member.profileImage ? `${API_BASE_URL}${member.profileImage}` : `/images/team/default-avatar.jpg`}
+                          alt={member.name}
+                          className="w-full h-full object-cover rounded-full bg-white"
+                          onError={(e) => {
+                            e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&size=150&background=ffffff&color=333333&format=png`;
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-
-                  {/* Member Info */}
-                  <div className="flex-1 space-y-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-                      <p className="text-green-600 font-semibold mb-1">{member.position}</p>
-                      <div className="flex items-center space-x-2">
-                        <span className={`inline-block px-2 py-1 text-xs rounded-full font-medium ${
-                          member.department === 'Chemical' ? 'bg-green-100 text-green-800' :
-                          member.department === 'Biological' ? 'bg-green-100 text-green-800' :
-                          member.department === 'Research' ? 'bg-green-100 text-green-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
-                          {member.department} Department
-                        </span>
-                        {member.joinDate && (
-                          <span className="text-xs text-gray-500">
-                            Since {new Date(member.joinDate).getFullYear()}
+                    {/* Member Info */}
+                    <div className="flex-1 space-y-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                        <p className="text-green-600 font-semibold mb-1">{member.position}</p>
+                        <div className="flex items-center space-x-2">
+                          <span className={`inline-block px-2 py-1 text-xs rounded-full font-medium ${
+                            member.department === 'Chemical' ? 'bg-green-100 text-green-800' :
+                            member.department === 'Biological' ? 'bg-green-100 text-green-800' :
+                            member.department === 'Research' ? 'bg-green-100 text-green-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {member.department} Department
                           </span>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <div className="font-medium text-gray-900">Education</div>
+                          <div className="text-gray-600">{member.education}</div>
+                        </div>
+                        <div>
+                          <div className="font-medium text-gray-900">Experience</div>
+                          <div className="text-gray-600">{member.experience}</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-medium text-gray-900 mb-2">Specialization</div>
+                        <div className="text-gray-600 text-sm">{member.specialization}</div>
+                      </div>
+                      {/* Contact Information */}
+                      <div className="flex items-center space-x-4 text-sm">
+                        {member.email && (
+                          <a href={`mailto:${member.email}`} className="flex items-center space-x-1 text-green-600 hover:underline">
+                            <FaEnvelope className="h-3 w-3" />
+                            <span>Email</span>
+                          </a>
                         )}
                       </div>
                     </div>
-
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div>
-                        <div className="font-medium text-gray-900">Education</div>
-                        <div className="text-gray-600">{member.education}</div>
-                      </div>
-                      <div>
-                        <div className="font-medium text-gray-900">Experience</div>
-                        <div className="text-gray-600">{member.experience}</div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="font-medium text-gray-900 mb-2">Specialization</div>
-                      <div className="text-gray-600 text-sm">{member.specialization}</div>
-                    </div>
-
-                    <div>
-                      <div className="font-medium text-gray-900 mb-2">Bio</div>
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{member.bio}</p>
-                    </div>
-
-                    {/* Contact Information */}
-                    <div className="flex items-center space-x-4 text-sm">
-                      {member.email && (
-                        <a href={`mailto:${member.email}`} className="flex items-center space-x-1 text-green-600 hover:underline">
-                          <FaEnvelope className="h-3 w-3" />
-                          <span>Email</span>
-                        </a>
-                      )}
-                      {member.phone && (
-                        <span className="text-gray-600">{member.phone}</span>
-                      )}
-                    </div>
-
-                    {/* Achievements */}
-                    {member.achievements && member.achievements.length > 0 && (
-                      <div>
-                        <div className="font-medium text-gray-900 mb-2">Recent Achievements</div>
-                        <div className="space-y-1">
-                          {member.achievements.slice(0, 2).map((achievement, achIndex) => (
-                            <div key={achIndex} className="text-sm text-gray-600">
-                              <span className="font-medium">🏆 {achievement.title}</span>
-                              {achievement.year && <span className="text-gray-500"> ({achievement.year})</span>}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Publications */}
-                    {member.publications && member.publications.length > 0 && (
-                      <div>
-                        <div className="font-medium text-gray-900 mb-2">Recent Publications</div>
-                        <div className="space-y-1">
-                          {member.publications.slice(0, 2).map((publication, pubIndex) => (
-                            <div key={pubIndex} className="text-sm text-gray-600">
-                              <span className="font-medium">📄 {publication.title}</span>
-                              {publication.year && <span className="text-gray-500"> ({publication.year})</span>}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
               ))}
             </div>
-            </>
           )}
         </div>
       </section>
@@ -687,7 +565,6 @@ const Team = () => {
               The principles that guide our professional conduct and service delivery
             </p>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -744,7 +621,7 @@ const Team = () => {
               Join Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're always looking for talented professionals to join our growing team. 
+              We're always looking for talented professionals to join our growing team.
               Explore our internship programs and career opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
