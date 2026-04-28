@@ -23,8 +23,17 @@ import {
   FaPlus,
   FaUser,
   FaFlask,
-  FaBrain
+  FaBrain,
+  FaTimes
 } from 'react-icons/fa';
+
+const getImageUrl = (imageSrc) => {
+  if (!imageSrc) return null;
+  if (imageSrc.startsWith('http')) return imageSrc;
+  if (imageSrc.startsWith('uploads/')) return `${API_BASE_URL}/${imageSrc}`;
+  if (imageSrc.startsWith('/')) return imageSrc;
+  return `/${imageSrc}`;
+};
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -41,6 +50,7 @@ const AdminDashboard = () => {
   const [adminUser, setAdminUser] = useState(null);
   const [showBlogPreview, setShowBlogPreview] = useState(false);
   const [previewBlog, setPreviewBlog] = useState(null);
+  const [selectedContact, setSelectedContact] = useState(null);
   
   // New feature states
   const [pages, setPages] = useState([]);
@@ -104,7 +114,7 @@ const AdminDashboard = () => {
           console.error('Contacts fetch error:', err.response?.data || err.message);
           return { data: { success: false, data: [] } };
         }),
-        api.get('/api/admin/internships/admin').catch(err => {
+        api.get('/api/admin/internship-applications/admin').catch(err => {
           console.error('Internships fetch error:', err.response?.data || err.message);
           return { data: { success: false, data: [] } };
         }),
@@ -220,7 +230,7 @@ const AdminDashboard = () => {
     const token = localStorage.getItem('adminToken');
 
     try {
-      await api.patch(`/api/admin/${type}/${id}`, { status: newStatus });
+      await api.patch(`/api/admin/${type}/admin/${id}`, { status: newStatus });
       toast.success(`${type} status updated successfully`);
       fetchData();
     } catch (error) {
@@ -234,7 +244,7 @@ const AdminDashboard = () => {
     const token = localStorage.getItem('adminToken');
 
     try {
-      await api.delete(`/api/admin/${type}/${id}`);
+      await api.delete(`/api/admin/${type}/admin/${id}`);
       toast.success(`${type} deleted successfully`);
       fetchData();
     } catch (error) {
@@ -258,7 +268,7 @@ const AdminDashboard = () => {
     const token = localStorage.getItem('adminToken');
     
     try {
-      await api.patch(`/api/admin/${type}/${id}`, { status });
+      await api.patch(`/api/admin/${type}/admin/${id}`, { status });
       toast.success('Status updated successfully');
       fetchData();
     } catch (error) {
@@ -273,7 +283,7 @@ const AdminDashboard = () => {
     
     try {
       console.log('Deleting contact with ID:', contactId);
-      const response = await api.delete(`/api/admin/contacts/${contactId}`);
+      const response = await api.delete(`/api/admin/contacts/admin/${contactId}`);
       console.log('Delete response:', response.data);
       toast.success('Contact deleted successfully');
       fetchData();
@@ -293,15 +303,7 @@ const AdminDashboard = () => {
   };
 
   const viewContactDetails = (contact) => {
-    const details = `
-Name: ${contact.name}
-Email: ${contact.email}
-Subject: ${contact.subject || 'General Inquiry'}
-Message: ${contact.message || 'No message'}
-Status: ${contact.status}
-Date: ${new Date(contact.createdAt).toLocaleString()}
-    `;
-    alert(details);
+    setSelectedContact(contact);
   };
 
   const exportData = (data, filename) => {
@@ -498,6 +500,71 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
     </div>
   );
 
+  const ContactDetailsModal = () => {
+    if (!selectedContact) return null;
+    return (
+      <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 flex items-center justify-center">
+        <div className="relative mx-auto p-6 border w-11/12 max-w-2xl shadow-lg rounded-xl bg-white">
+          <div className="flex justify-between items-center mb-6 border-b pb-4">
+            <h3 className="text-2xl font-bold text-gray-900">Contact Details</h3>
+            <button
+              onClick={() => setSelectedContact(null)}
+              className="text-gray-400 hover:text-gray-600 focus:outline-none"
+            >
+              <FaTimes className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="space-y-4">
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <p className="text-sm text-gray-500 mb-1">Name</p>
+              <p className="font-semibold text-gray-900">{selectedContact.name}</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <p className="text-sm text-gray-500 mb-1">Email</p>
+              <p className="font-semibold text-gray-900">
+                <a href={`mailto:${selectedContact.email}`} className="text-green-600 hover:underline">
+                  {selectedContact.email}
+                </a>
+              </p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <p className="text-sm text-gray-500 mb-1">Subject</p>
+              <p className="font-semibold text-gray-900">{selectedContact.subject || 'General Inquiry'}</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <p className="text-sm text-gray-500 mb-1">Message</p>
+              <p className="text-gray-900 whitespace-pre-wrap">{selectedContact.message || 'No message provided'}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-sm text-gray-500 mb-1">Status</p>
+                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                  selectedContact.status === 'new' ? 'bg-green-100 text-green-800' :
+                  selectedContact.status === 'contacted' ? 'bg-blue-100 text-blue-800' :
+                  'bg-gray-100 text-gray-800'
+                }`}>
+                  {selectedContact.status.toUpperCase()}
+                </span>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-sm text-gray-500 mb-1">Date Submitted</p>
+                <p className="font-semibold text-gray-900">{new Date(selectedContact.createdAt).toLocaleString()}</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex justify-end">
+            <button
+              onClick={() => setSelectedContact(null)}
+              className="px-6 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors focus:outline-none"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const ContactsTable = () => (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden">
       <div className="p-6 border-b border-gray-200">
@@ -598,6 +665,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
           </tbody>
         </table>
       </div>
+      {selectedContact && <ContactDetailsModal />}
     </div>
   );
 
@@ -677,7 +745,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                   <td className="px-6 py-4 whitespace-nowrap">
                     <select
                       value={internship.status}
-                      onChange={(e) => handleStatusUpdate('internships', internship._id, e.target.value)}
+                      onChange={(e) => handleStatusUpdate('internship-applications', internship._id, e.target.value)}
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                         internship.status === 'pending' ? 'bg-green-100 text-green-800' :
                         internship.status === 'approved' ? 'bg-green-100 text-green-800' :
@@ -709,7 +777,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                         </a>
                       )}
                       <button
-                        onClick={() => handleDelete('internships', internship._id)}
+                        onClick={() => handleDelete('internship-applications', internship._id)}
                         className="text-green-600 hover:text-green-900"
                         title="Delete"
                       >
@@ -1193,7 +1261,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
       });
       
       if (member.profileImage) {
-        setImagePreview(`${API_BASE_URL}${member.profileImage}`);
+        setImagePreview(getImageUrl(member.profileImage));
       }
       
       setShowCreateForm(true);
@@ -1361,7 +1429,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                           {member.profileImage ? (
                             <img 
                               className="h-10 w-10 rounded-full object-cover" 
-                              src={`${API_BASE_URL}${member.profileImage}`} 
+                              src={getImageUrl(member.profileImage)} 
                               alt={member.name}
                             />
                           ) : (
@@ -1929,7 +1997,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
       });
       
       if (item.equipmentImages && item.equipmentImages.length > 0) {
-        setImagePreview(item.equipmentImages.map(img => `${API_BASE_URL}${img}`));
+        setImagePreview(item.equipmentImages.map(img => getImageUrl(img)));
       }
       
       setShowCreateForm(true);
@@ -2126,7 +2194,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
                           {item.equipmentImages && item.equipmentImages.length > 0 ? (
                             <img 
                               className="h-10 w-10 rounded-lg object-cover" 
-                              src={`${API_BASE_URL}${item.equipmentImages[0]}`} 
+                              src={getImageUrl(item.equipmentImages[0])} 
                               alt={item.name}
                             />
                           ) : (
@@ -4302,7 +4370,7 @@ Date: ${new Date(contact.createdAt).toLocaleString()}
           </div>
 
           {/* Main Content */}
-          <div className="flex-1">
+          <div className="flex-1 min-w-0 overflow-x-hidden">
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, x: 20 }}

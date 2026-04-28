@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { FaEnvelope, FaFlask, FaMicroscope } from 'react-icons/fa';
 import api, { API_BASE_URL } from '../api/config';
 
+const getImageUrl = (member) => {
+  const imgStr = member.profileImage || member.img;
+  if (!imgStr) return null;
+  if (imgStr.startsWith('http')) return imgStr;
+  if (imgStr.startsWith('uploads/')) return `${API_BASE_URL}/${imgStr}`;
+  if (imgStr.startsWith('/')) return imgStr;
+  return `/${imgStr}`;
+};
+
 const Team = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [boardMembers, setBoardMembers] = useState([]);
@@ -20,7 +29,7 @@ const Team = () => {
       experience: '15+ years in laboratory management and biophysics research',
       specialization: 'Laboratory Management, Quality Systems, Biophysics',
       bio: 'Dr. Preetha Bhadra is the Managing Director of GTFTL with over 15 years of experience in laboratory management and biophysics research. She leads the strategic direction of the laboratory and ensures adherence to the highest quality standards.',
-      img: '/Dr.Preetha Bhadra.jpg',
+      img: '/Dr.Preetha_Bhadra.jpg',
       isActive: true
     },
     {
@@ -116,7 +125,7 @@ const Team = () => {
       specialization: 'Microbiological Testing, Culture Techniques',
       bio: 'Skilled microbiologist specializing in food safety testing and microbiological quality assurance.',
       isActive: true,
-      img: '/Mr.Badal Biswal.jpg'
+      img: '/Mr.Badal_Biswal.jpg'
     },
     {
       _id: '9',
@@ -262,9 +271,9 @@ const Team = () => {
                 <div className="h-32 bg-gradient-to-r from-green-700 to-green-600">
                   <div className="flex items-center justify-center h-full">
                     <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
-                      {member.img ? (
+                      {getImageUrl(member) ? (
                         <img
-                          src={`${member.img}`}
+                          src={getImageUrl(member)}
                           alt={member.name}
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -275,7 +284,7 @@ const Team = () => {
                       ) : null}
                       <span
                         className="text-xl font-bold text-gray-700 flex items-center justify-center w-full h-full bg-green-600"
-                        style={{ display: member.img ? 'none' : 'flex' }}
+                        style={{ display: getImageUrl(member) ? 'none' : 'flex' }}
                       >
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </span>
@@ -315,9 +324,9 @@ const Team = () => {
                 <div className={`h-24 bg-gradient-to-r ${member.department === 'Chemical' ? 'from-green-400 to-green-500' : 'from-green-400 to-green-500'}`}>
                   <div className="flex items-center justify-center h-full">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center overflow-hidden">
-                      {member.img ? (
+                      {getImageUrl(member) ? (
                         <img
-                          src={`${member.img}`}
+                          src={getImageUrl(member)}
                           alt={member.name}
                           className="w-full h-full object-cover"
                           onError={(e) => {
@@ -328,7 +337,7 @@ const Team = () => {
                       ) : null}
                       <span
                         className="text-lg font-bold text-gray-700 flex items-center justify-center w-full h-full"
-                        style={{ display: member.img ? 'none' : 'flex' }}
+                        style={{ display: getImageUrl(member) ? 'none' : 'flex' }}
                       >
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </span>

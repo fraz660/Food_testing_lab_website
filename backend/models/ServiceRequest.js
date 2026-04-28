@@ -22,16 +22,7 @@ const serviceRequestSchema = new mongoose.Schema({
   serviceType: {
     type: String,
     required: true,
-    enum: [
-      'Food Testing',
-      'Pharmaceutical Testing', 
-      'Marine Products Testing',
-      'Forensic Material Testing',
-      'Nutritional & Nutraceutical Testing',
-      'Microbiological Testing',
-      'Animal Cell Culture',
-      'In Silico Analysis'
-    ]
+    trim: true
   },
   urgency: {
     type: String,

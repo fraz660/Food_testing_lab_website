@@ -90,7 +90,7 @@ app.use('/api/ai', aiRoutes);
 // Admin routes
 app.use('/api/admin/auth', authRoutes);
 app.use('/api/admin/contacts', contactRoutes);
-app.use('/api/admin/internships', internshipRoutes);
+app.use('/api/admin/internship-applications', internshipRoutes);
 app.use('/api/admin/blogs', blogRoutes);
 app.use('/api/admin/service-requests', serviceRequestRoutes);
 app.use('/api/admin/team', teamRoutes);

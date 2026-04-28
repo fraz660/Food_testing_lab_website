@@ -26,7 +26,7 @@ const teamSchema = new mongoose.Schema({
   },
   bio: {
     type: String,
-    maxlength: [1000, 'Bio cannot exceed 1000 characters']
+    maxlength: [3000, 'Bio cannot exceed 3000 characters']
   },
   profileImage: {
     type: String,
